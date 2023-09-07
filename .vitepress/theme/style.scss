@@ -1,0 +1,17 @@
+/**
+ * Customize default theme styling by overriding CSS variables:
+ * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
+ */
+
+// https://vitepress.dev/guide/extending-default-theme#customizing-css
+
+.current {
+  scroll-margin-top: 350px;
+  &.week {
+    border-left: 2px solid var(--vp-c-brand-1) !important;
+    border-right: 2px solid var(--vp-c-brand-1) !important;
+  }
+  &.weekend {
+    border-bottom: 2px solid var(--vp-c-brand-1) !important;
+  }
+}

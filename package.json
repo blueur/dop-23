@@ -1,0 +1,20 @@
+{
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "vitepress": "^1.0.0-rc.10",
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "@types/node": "^20.5.9",
+    "husky": "^8.0.3",
+    "sass": "^1.66.1"
+  }
+}
