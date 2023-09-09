@@ -15,3 +15,22 @@
     border-bottom: 2px solid var(--vp-c-brand-1) !important;
   }
 }
+
+.reveal {
+  &.embedded {
+    height: 512px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    border: inherit;
+    padding: inherit;
+  }
+  strong {
+    color: #ff9800;
+  }
+}

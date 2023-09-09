@@ -7,6 +7,7 @@ export default defineConfig({
   description: "DevOps class at HEIG-VD",
   cleanUrls: true,
   lastUpdated: true,
+  srcExclude: ["**/README.md"],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     footer: {
@@ -30,7 +31,7 @@ export default defineConfig({
     sidebar: [
       {
         text: "Lessons",
-        items: [{ text: "DevOps", link: "/lessons/devops" }],
+        items: [{ text: "Introduction", link: "/lessons/introduction" }],
       },
       {
         text: "Labs",
