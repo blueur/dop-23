@@ -21,6 +21,7 @@
     height: 512px;
     border: 1px solid rgba(0, 0, 0, 0.2);
   }
+
   h1,
   h2,
   h3,
@@ -32,5 +33,9 @@
   }
   strong {
     color: #ff9800;
+  }
+
+  .reference {
+    font-size: small;
   }
 }
