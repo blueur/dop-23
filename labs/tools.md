@@ -27,7 +27,7 @@
   | Tâche | Estimation | Temps réel | Commentaire |
   |-------|------------|------------|-------------|
   | ... | 2h | 1h30 | ... |
-- Le but n'étant pas d'estimer correctement, mais de s'améliorer au fil des laboratoires
+- Le but n'étant pas d'estimer correctement, mais comprendre comment vous pourriez améliorer vos estimations
 
 ### Environnement de travail
 
@@ -74,3 +74,25 @@ Installer et vérifier les outils suivants (mettre à jour si nécessaire):
 - Créer un compte sur [GitLab](https://gitlab.com/)
   - Préférer un compte privé que vous utiliserez par la suite
   - Donner l'URL de votre profil dans votre rapport (p. ex. https://gitlab.com/blueur)
+- Créer un projet privé sur GitLab
+  - Nom du projet : `HEIG-VD DevOps 01`
+  - Identifiant du projet (laisser par défaut) : `heig-vd-devops-01`
+- Ajouter `blueur` comme membre du projet
+  - Trouver le bon rôle qui permet voir tous les merge requests (MR) sans pouvoir pousser du code
+- Protéger la branche `main`
+  - Personne ne doit pouvoir pousser directement sur la branche
+  - Seuls les mainteneurs peuvent fusionner des MR
+- Cloner le répertoire sur votre machine
+  - Vérifier que vous pouvez pas pousser directement sur la branche `main`
+- Créer une issue (ticket) dans le projet
+  - Titre : `Rendu labo 01`
+  - Assigner l'issue à vous-même
+- Sur votre ordinateur, créer une nouvelle branche `feature/01-tools`
+  - Ajouter votre fichier `lab01-tools-{noms}.md`
+  - Pousser la branche sur GitLab
+- Créer une MR pour fusionner votre branche dans `main`
+  - Lier d'une façon ou d'une autre la MR à l'issue `Rendu labo 01`
+  - Assigner la MR à `blueur` si possible
+- Essayer l'outils de suivi du temps de GitLab pour vos estimations
+  - `/estimate 2h` pour estimer le temps nécessaire pour la MR
+  - `/spend 1h30` pour indiquer le temps réellement passé
