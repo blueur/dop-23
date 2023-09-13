@@ -1,6 +1,7 @@
 ---
 footer: true
 sidebar: false
+title: Home
 ---
 
 # DevOps
