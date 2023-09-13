@@ -31,10 +31,15 @@ export default defineConfig({
     sidebar: [
       {
         text: "Lessons",
-        items: [{ text: "Introduction", link: "/lessons/introduction" }],
+        collapsed: true,
+        items: [
+          { text: "Introduction", link: "/lessons/introduction" },
+          { text: "Code", link: "/lessons/code" },
+        ],
       },
       {
         text: "Labs",
+        collapsed: true,
         items: [{ text: "Tools", link: "/labs/tools" }],
       },
     ],

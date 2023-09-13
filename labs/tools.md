@@ -16,13 +16,13 @@
 
 ### Estimer son travail
 
-- Estimer le temps nécessaire pour réaliser ce laboratoire
-  - Parcourir toute la consigne et estimer le temps nécessaire pour chaque tâche
-  - Noter l'estimation totale en heures ainsi que le découpage en tâches dans votre rapport
-- A la fin du rapport, comparer le temps estimé avec le temps réellement passé
-  - Noter le temps réellement passé dans votre rapport
-  - Comparer avec l'estimation initiale
-  - Expliquer les différences
+- Estimez le temps nécessaire pour réaliser ce laboratoire
+  - Parcourez toute la consigne et estimez le temps nécessaire pour chaque tâche
+  - Notez l'estimation totale en heures ainsi que le découpage en tâches dans votre rapport
+- A la fin du rapport, comparez le temps estimé avec le temps réellement passé
+  - Notez le temps réellement passé dans votre rapport
+  - Comparez avec l'estimation initiale
+  - Expliquez les différences
 - Vous pouvez noter sous forme de tableau, par exemple:
   | Tâche | Estimation | Temps réel | Commentaire |
   |-------|------------|------------|-------------|
@@ -31,68 +31,82 @@
 
 ### Environnement de travail
 
-Installer et vérifier les outils suivants (mettre à jour si nécessaire):
+Installez et vérifiez les outils suivants (mettre à jour si nécessaire):
 
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Git](https://git-scm.com/)
-  - Vérifier avec `git --version`
+  - Vérifiez avec `git --version`
 - [Docker](https://www.docker.com/)
-  - Vérifier avec `docker --version`
+  - Vérifiez avec `docker --version`
+  - Vérifiez avec `docker compose version`
 - [Node.js](https://nodejs.org/)
   - Au moins la version LTS
-  - Vérifier avec `node --version`
+  - Vérifiez avec `node --version`
   - Vous pouvez utiliser [nvm](https://github.com/nvm-sh/nvm) pour gérer les versions de Node.js
 - [Python](https://www.python.org/)
-  - Vérifier avec `python --version`
+  - Vérifiez avec `python --version`
   - Vous pouvez utiliser [pyenv](https://github.com/pyenv/pyenv) pour gérer les versions de Python
 - [Poetry](https://python-poetry.org/)
-  - Vérifier avec `poetry --version`
+  - Vérifiez avec `poetry --version`
 - [MiniKube](https://minikube.sigs.k8s.io/docs/)
-  - Vérifier avec `minikube version`
+  - Vérifiez avec `minikube version`
 
 ::: tip Conseils
 
-- Préférer les versions stables (LTS) aux versions de développement
+- Préférez les versions stables (LTS) aux versions de développement
   - Moins de bugs
-- Préférer les versions officielles aux versions modifiées (p. ex. [Anaconda](https://www.anaconda.com/))
+- Préférez les versions officielles aux versions modifiées (p. ex. [Anaconda](https://www.anaconda.com/))
   - On n'installe que les outils nécessaires
-- Préférer les gestionnaires de versions (nvm et pyenv) aux installations manuelles
+- Préférez les gestionnaires de versions (nvm et pyenv) aux installations manuelles
   - Permet de gérer plusieurs versions en parallèle
 
 :::
 
 ::: tip Conseils pour Windows
 
-- Utiliser [Chocolatey](https://chocolatey.org/) pour installer les outils
-- Utiliser [cmder](https://cmder.app/) comme terminal
+- Utilisez [Chocolatey](https://chocolatey.org/) pour installer les outils
+- Utilisez [cmder](https://cmder.app/) comme terminal
   - Intégration avec [Windows Terminal](https://medium.com/talpor/windows-terminal-cmder-%EF%B8%8F-573e6890d143)
 
 :::
 
 ### GitLab
 
-- Créer un compte sur [GitLab](https://gitlab.com/)
-  - Préférer un compte privé que vous utiliserez par la suite
-  - Donner l'URL de votre profil dans votre rapport (p. ex. https://gitlab.com/blueur)
-- Créer un projet privé sur GitLab
-  - Nom du projet : `HEIG-VD DevOps 01`
-  - Identifiant du projet (laisser par défaut) : `heig-vd-devops-01`
-- Ajouter `blueur` comme membre du projet
-  - Trouver le bon rôle qui permet voir tous les merge requests (MR) sans pouvoir pousser du code
-- Protéger la branche `main`
+- Créez un compte sur [GitLab](https://gitlab.com/) (si vous n'en avez pas déjà un)
+  - Préférez un compte privé que vous utiliserez par la suite
+  - Donnez l'URL de votre profil dans votre rapport (p. ex. https://gitlab.com/blueur)
+- Créez un projet privé sur GitLab
+  - Nom du projet : `HEIG-VD DevOps`
+  - Identifiant du projet (laisser par défaut) : `heig-vd-devops`
+- Ajoutez `blueur` comme membre du projet
+  - Trouvez le bon [rôle](https://docs.gitlab.com/ee/user/permissions.html) qui permet voir tous les merge requests (MR) sans pouvoir pousser du code
+- Protégez la branche `main`
   - Personne ne doit pouvoir pousser directement sur la branche
   - Seuls les mainteneurs peuvent fusionner des MR
-- Cloner le répertoire sur votre machine
-  - Vérifier que vous pouvez pas pousser directement sur la branche `main`
-- Créer une issue (ticket) dans le projet
+- Clonez le répertoire sur votre machine
+  - Vérifiez que vous ne pouvez pas pousser directement sur la branche `main`
+- Créez une issue (ticket) dans le projet
   - Titre : `Rendu labo 01`
-  - Assigner l'issue à vous-même
-- Sur votre ordinateur, créer une nouvelle branche `feature/01-tools`
-  - Ajouter votre fichier `lab01-tools-{noms}.md`
-  - Pousser la branche sur GitLab
-- Créer une MR pour fusionner votre branche dans `main`
-  - Lier d'une façon ou d'une autre la MR à l'issue `Rendu labo 01`
-  - Assigner la MR à `blueur` si possible
-- Essayer l'outils de suivi du temps de GitLab pour vos estimations
+  - Assignez l'issue à vous-même
+- Sur votre ordinateur, créez une nouvelle branche `feature/01-tools` et allez dessus
+  - Créez un projet Vue 3 dans le dossier `/frontend`
+    - https://vuejs.org/guide/quick-start.html#creating-a-vue-application
+    - Depuis la racine du répertoire, exécutez `npm create vue@latest`
+      - Project name: `frontend`
+      - Add TypeScript? Yes
+      - Add JSX Support? No
+      - Add Vue Router for Single Page Application development? No
+      - Add Pinia for state management? No
+      - Add Vitest for Unit testing? No
+      - Add an End-to-End Testing Solution? No
+      - Add ESLint for code quality? Yes
+      - Add Prettier for code formatting? Yes
+  - Créez un commit avec les changements et poussez la branche sur GitLab
+- Créez une MR pour fusionner votre branche dans `main`
+  - Liez d'une façon ou d'une autre la MR à l'issue `Rendu labo 01`
+  - Assignez la MR à vous-même
+- Essayez l'outils de suivi du temps de GitLab pour vos estimations
   - `/estimate 2h` pour estimer le temps nécessaire pour la MR
   - `/spend 1h30` pour indiquer le temps réellement passé
+- Cherchez quelles sont les bonnes pratiques pour un message de commit
+  - Écrivez quelques mots sur les bonnes pratiques que vous avez trouvées dans votre rapport
