@@ -15,7 +15,7 @@ sidebar: false
 | 2023-10-11 |  04  |                                        |                                |
 | 2023-10-18 |  05  |                                        |                                |
 | 2023-10-25 |      | _Interdisciplinary activities_         | _Interdisciplinary activities_ |
-| 2023-11-01 |  06  |                                        |                                |
+| 2023-11-01 |  06  | **Test**                               |                                |
 | 2023-11-08 |  07  |                                        |                                |
 | 2023-11-15 |  08  |                                        |                                |
 | 2023-11-22 |  09  |                                        |                                |
@@ -25,10 +25,10 @@ sidebar: false
 | 2023-12-20 |  13  |                                        |                                |
 | 2023-12-27 |      | _Holidays_                             | _Holidays_                     |
 | 2024-01-03 |      | _Holidays_                             | _Holidays_                     |
-| 2024-01-10 |  14  |                                        |                                |
+| 2024-01-10 |  14  | **Test**                               |                                |
 | 2024-01-17 |  15  |                                        |                                |
 | 2024-01-24 |  16  |                                        |                                |
-|            |      | Examen                                 | Examen                         |
+| TBD        |      | **Exam**                               |                                |
 
 ## Links
 
