@@ -5,6 +5,21 @@
         # Code
         DevOps
 ---
+        ## IDE
+        - &shy;<!-- .element: class="fragment" --> **I**ntegrated **D**evelopment **E**nvironment
+        - &shy;<!-- .element: class="fragment" --> Facilite l'**édition** et le **débogage** du code
+        - &shy;<!-- .element: class="fragment" --> Partage de **configuration** entre les développeurs
+            - &shy;<!-- .element: class="fragment" --> Spécifique à l'IDE ou [EditorConfig](https://editorconfig.org/)
+            - &shy;<!-- .element: class="fragment" --> [Prettier](https://prettier.io/) pour le **formattage** du code
+---
+        ## IDE
+        - &shy;<!-- .element: class="fragment" --> [Visual Studio Code](https://code.visualstudio.com/) ou [VSCodium](https://vscodium.com/)
+            - &shy;<!-- .element: class="fragment" --> **Open source** et **gratuit**
+        - &shy;<!-- .element: class="fragment" --> [IntelliJ IDEA](https://www.jetbrains.com/idea/) ou autres IDE de [JetBrains](https://www.jetbrains.com/)
+            - &shy;<!-- .element: class="fragment" --> **Payant** (sauf étudiant) mais meilleure **refactoring** et **autocomplétion**
+        - &shy;<!-- .element: class="fragment" --> [Eclipse](https://www.eclipse.org/)
+            - &shy;<!-- .element: class="fragment" --> **Open source** et **gratuit**, mais **lourd**
+---
         ## Logiciel de gestion de versions
         - &shy;<!-- .element: class="fragment" --> Version control system (VCS)
         - &shy;<!-- .element: class="fragment" --> **Conserve** le code source avec son **historique**
@@ -18,6 +33,12 @@
         - &shy;<!-- .element: class="fragment" --> Chaque commit a un **parent**
         - &shy;<!-- .element: class="fragment" --> Les **branches** et **tag** sont des pointeurs vers un commit
         - &shy;<!-- .element: class="fragment" --> Les **branches** sont des pointeurs **mobiles**
+---
+        ### Réécriture de l'historique
+        - &shy;<!-- .element: class="fragment" --> **commit --amend** : modifie le dernier commit
+        - &shy;<!-- .element: class="fragment" --> **rebase -i** : modifie les x derniers commits
+        - &shy;<!-- .element: class="fragment" --> **rebase** : déplace les commits vers une référence (branche ou commit)
+        - &shy;<!-- .element: class="fragment" --> Écrire un historique **propre** et **lisible** avant de merge
 ---
         ## Workflow
         - &shy;<!-- .element: class="fragment" data-fragment-index="1" --> **Comment** utiliser Git ?

@@ -19,6 +19,7 @@
         - &shy;<!-- .element: class="fragment" --> Améliorer la **collaboration** entre les développeurs et les opérationnels
         - &shy;<!-- .element: class="fragment" --> **Réduire** le cycle de développement
         - &shy;<!-- .element: class="fragment" --> Améliorer la **qualité** des logiciels
+        - &shy;<!-- .element: class="fragment" --> You **build** it, you **run** it (YBIYRI)
 ---
         ![](/introduction/DevOps-lifecycle-capabilities-1024x621.jpeg)
         https://orangematter.solarwinds.com/2022/03/21/what-is-devops/ <!-- .element: class="reference" target="_blank" -->

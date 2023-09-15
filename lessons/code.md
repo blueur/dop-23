@@ -12,7 +12,10 @@ import Code from '@/components/lessons/code.vue'
 
 ## Références
 
-- https://fr.wikipedia.org/wiki/Logiciel_de_gestion_de_versions
-- https://fr.wikipedia.org/wiki/Git
+- https://www.atlassian.com/git/tutorials/rewriting-history
+- https://git-scm.com/book/fr/v2/Utilitaires-Git-R%C3%A9%C3%A9crire-l%E2%80%99historique
 - https://www.atlassian.com/git/tutorials/comparing-workflows
 - https://nvie.com/posts/a-successful-git-branching-model/
+
+- https://fr.wikipedia.org/wiki/Logiciel_de_gestion_de_versions
+- https://fr.wikipedia.org/wiki/Git
