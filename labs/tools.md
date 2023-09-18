@@ -48,6 +48,7 @@ Installez et vérifiez les outils suivants (mettre à jour si nécessaire):
   - Vous pouvez utiliser [pyenv](https://github.com/pyenv/pyenv) pour gérer les versions de Python
 - [Poetry](https://python-poetry.org/)
   - Vérifiez avec `poetry --version`
+  - Utilisez les [virtualenvs en local](https://python-poetry.org/docs/configuration/#virtualenvsin-project) avec `poetry config virtualenvs.in-project true`
 - [MiniKube](https://minikube.sigs.k8s.io/docs/)
   - Vérifiez avec `minikube version`
 
@@ -67,6 +68,7 @@ Installez et vérifiez les outils suivants (mettre à jour si nécessaire):
 - Utilisez [Chocolatey](https://chocolatey.org/) pour installer les outils
 - Utilisez [cmder](https://cmder.app/) comme terminal
   - Intégration avec [Windows Terminal](https://medium.com/talpor/windows-terminal-cmder-%EF%B8%8F-573e6890d143)
+- Il est possible que vous deviez désactiver l'[alias d'exécution de Python](https://www.thewindowsclub.com/manage-app-execution-aliases-on-windows-10)
 
 :::
 
@@ -89,6 +91,7 @@ Installez et vérifiez les outils suivants (mettre à jour si nécessaire):
   - Titre : `Rendu labo 01`
   - Assignez l'issue à vous-même
 - Sur votre ordinateur, créez une nouvelle branche `feature/01-tools` et allez dessus
+
   - Créez un projet Vue 3 dans le dossier `/frontend`
     - https://vuejs.org/guide/quick-start.html#creating-a-vue-application
     - Depuis la racine du répertoire, exécutez `npm create vue@latest`
@@ -101,7 +104,40 @@ Installez et vérifiez les outils suivants (mettre à jour si nécessaire):
       - Add an End-to-End Testing Solution? No
       - Add ESLint for code quality? Yes
       - Add Prettier for code formatting? Yes
+    - Installez les dépendances avec `npm install`
+    - Testez le serveur de développement avec `npm run dev`
   - Créez un commit avec les changements et poussez la branche sur GitLab
+  - Créez un projet Poetry dans le dossier `/backend`
+
+    - https://python-poetry.org/docs/basic-usage/#project-setup
+    - Depuis la racine du répertoire, exécutez `poetry new backend`
+    - Depuis le dossier `/backend`, installez [FastAPI](https://fastapi.tiangolo.com/)
+
+      - https://fastapi.tiangolo.com/#installation
+      - `poetry add fastapi uvicorn[standard]`
+      - Créez un fichier `main.py` avec le code suivant:
+
+        ```python
+        from typing import Union
+
+        from fastapi import FastAPI
+
+        app = FastAPI()
+
+
+        @app.get("/")
+        def read_root():
+            return {"Hello": "World"}
+
+
+        @app.get("/items/{item_id}")
+        def read_item(item_id: int, q: Union[str, None] = None):
+            return {"item_id": item_id, "q": q}
+        ```
+
+      - Testez le serveur de développement avec `poetry run uvicorn main:app --reload`
+      - Vous pourrez voir la documentation de l'API à l'adresse http://127.0.0.1:8000/docs
+
 - Créez une MR pour fusionner votre branche dans `main`
   - Liez d'une façon ou d'une autre la MR à l'issue `Rendu labo 01`
   - Assignez la MR à vous-même
