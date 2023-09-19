@@ -6,6 +6,7 @@
         DevOps
 ---
         Qu'est-ce que le DevOps ?
+        - &shy;<!-- .element: class="fragment" --> **Mouvement** culturel
 ---
         ## Historique
         - &shy;<!-- .element: class="fragment" --> Avant : cloisonnement des équipes de **développement** et d'**exploitation**
@@ -64,6 +65,12 @@
             - &shy;<!-- .element: class="fragment" --> Réunion **régulière**
             - &shy;<!-- .element: class="fragment" --> **Test A/B** par les utilisateurs
 ---
+        #### Test A/B
+        ![](https://upload.wikimedia.org/wikipedia/commons/6/68/A-B_testing_simple_example.png)
+        <p class="reference">
+          <a href="https://commons.wikimedia.org/wiki/File:A-B_testing_simple_example.png">Maxime Lorant</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons
+        </p>
+---
         ### Measurement
         - Quoi ?
             - &shy;<!-- .element: class="fragment" --> **Mesure** des performances
@@ -94,6 +101,12 @@
         - &shy;<!-- .element: class="fragment" --> **Fréquence** des livraisons de logiciels :
             - &shy;<!-- .element: class="fragment" --> Disques (CD/DVD) : **années**
             - &shy;<!-- .element: class="fragment" --> Cloud (dématérialisé) : **heures/minutes**
+---
+        ![](https://cdnb.ganttpro.com/uploads/2016/11/waterfall-and-agile-methods.jpg)
+        https://blog.ganttpro.com/en/waterfall-vs-agile-with-advantages-and-disadvantages/ <!-- .element: class="reference" target="_blank" -->
+---
+        ![](https://powerslides.com/wp-content/uploads/2019/03/Agile-vs-Waterfall-3.png)
+        https://powerslides.com/powerpoint-business/project-management-templates/agile-vs-waterfall/ <!-- .element: class="reference" target="_blank" -->
 ---
         ### Manifeste Agile
         - Lire le [manifeste](https://agilemanifesto.org/iso/fr/manifesto.html) <!-- .element: target="_blank" --> ainsi que ses [12 principes](https://agilemanifesto.org/iso/fr/principles.html) <!-- .element: target="_blank" -->

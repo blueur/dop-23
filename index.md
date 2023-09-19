@@ -37,6 +37,10 @@ title: Home
 - [Fiche d'unité](https://gaps.heig-vd.ch/public/fiches/uv/uv.php?id=7181&plan=792)
 - [Calendrier académique](https://heig-vd.ch/formation/bachelor/calendrier-academique/)
 
+## Ressources additionnelles
+
+- [Google Site Reliability Engineering](https://sre.google/)
+
 <script setup>
 import { onMounted, nextTick } from 'vue'
 

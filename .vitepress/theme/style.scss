@@ -31,6 +31,9 @@
     border: inherit;
     padding: inherit;
   }
+  img {
+    margin: auto !important;
+  }
   strong {
     color: var(--vp-c-danger-1);
   }
