@@ -138,6 +138,10 @@ Installez et vérifiez les outils suivants (mettre à jour si nécessaire):
       - Testez le serveur de développement avec `poetry run uvicorn main:app --reload`
       - Vous pourrez voir la documentation de l'API à l'adresse http://127.0.0.1:8000/docs
 
+    - Ajoutez un fichier .gitignore adapté au projet
+
+  - Créez un commit avec les changements et poussez la branche sur GitLab
+
 - Créez une MR pour fusionner votre branche dans `main`
   - Liez d'une façon ou d'une autre la MR à l'issue `Rendu labo 01`
   - Assignez la MR à vous-même
