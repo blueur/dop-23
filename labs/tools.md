@@ -150,3 +150,8 @@ Installez et vérifiez les outils suivants (mettre à jour si nécessaire):
   - `/spend 1h30` pour indiquer le temps réellement passé
 - Cherchez quelles sont les bonnes pratiques pour un message de commit
   - Écrivez quelques mots sur les bonnes pratiques que vous avez trouvées dans votre rapport
+
+### Bonus : Réécriture de Git
+
+- Clonez le répertoire [Git Exercise](https://github.com/blueur/git-exercises)
+- Faites les exercices indiqués dans le README
