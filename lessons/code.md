@@ -1,5 +1,11 @@
 # Code
 
+## Objectifs
+
+- Comprendre l'importance d'un IDE et d'un VCS
+- Comprendre les concepts de base de Git
+- Différencier les différents types de Git Workflow
+
 ## Cours
 
 <script setup>
@@ -7,8 +13,6 @@ import Code from '@/components/lessons/code.vue'
 </script>
 
 <Code />
-
-## Exercices
 
 ## Références
 

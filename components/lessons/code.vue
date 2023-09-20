@@ -99,11 +99,68 @@
         ### Quel workflow choisir ?
         - &shy;<!-- .element: class="fragment" --> Éviter le **Centralized**
         - &shy;<!-- .element: class="fragment" --> **Feature Branch** pour les **petits** projets (même seul)
-        - &shy;<!-- .element: class="fragment" --> Idéalement le **Gitflow** ou un descendant
+        - &shy;<!-- .element: class="fragment" --> Idéalement le **Gitflow** ou une simplification
             - &shy;<!-- .element: class="fragment" --> [GitHub flow](https://docs.github.com/fr/get-started/quickstart/github-flow) <!-- .element: target="_blank" -->
             - &shy;<!-- .element: class="fragment" --> [GitLab flow](https://about.gitlab.com/topics/version-control/what-is-gitlab-flow/) <!-- .element: target="_blank" -->
         - &shy;<!-- .element: class="fragment" --> **Adapter** le workflow selon les collaborateurs et le projet
+---
+        ### "Rebase" Workflow
+        - &shy;<!-- .element: class="fragment" --> Ma propre adaptation du **Gitflow**
+        - &shy;<!-- .element: class="fragment" --> **main** : déployé en **production**
+        - &shy;<!-- .element: class="fragment" --> **develop** : déployé en **pré-production**
+        - &shy;<!-- .element: class="fragment" --> **tag** : v0.1.0, v1.0.0, ... sur main
+        - &shy;<!-- .element: class="fragment" --> **feature** : branche par fonctionnalité
+        - &shy;<!-- .element: class="fragment" --> Historique **linéaire**, fast-forward merge après rebase
       </textarea>
+    </section>
+    <section data-auto-animate>
+      <div class="mermaid r-stretch">
+        <pre>
+---
+title: Feature branch
+---
+gitGraph
+  commit id: "feat: initialize"
+  branch develop
+  commit id: "feat: add a"
+  branch feature/1
+  commit id: "feat: add 1a"
+  commit id: "feat: add 1b"
+  checkout develop
+  commit id: "feat: add b"
+        </pre>
+      </div>
+    </section>
+    <section data-auto-animate>
+      <div class="mermaid r-stretch">
+        <pre>
+---
+title: Merge to develop
+---
+gitGraph
+  commit id: "feat: initialize"
+  branch develop
+  commit id: "feat: add a"
+  commit id: "feat: add b"
+  commit id: "feat: add 1a"
+  commit id: "feat: add 1b"
+        </pre>
+      </div>
+    </section>
+    <section data-auto-animate>
+      <div class="mermaid r-stretch">
+        <pre>
+---
+title: Deploy
+---
+gitGraph
+  commit id: "feat: initialize"
+  commit id: "feat: add a"
+  commit id: "feat: add b"
+  commit id: "feat: add 1a"
+  commit id: "feat: add 1b" tag: "v0.1.0"
+        </pre>
+      </div>
     </section>
   </Reveate>
 </template>

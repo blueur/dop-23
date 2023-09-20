@@ -41,4 +41,10 @@
   .reference {
     font-size: small;
   }
+  .mermaid {
+    svg {
+      height: 100%;
+      width: 100%;
+    }
+  }
 }
