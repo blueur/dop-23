@@ -35,12 +35,16 @@ export default defineConfig({
         items: [
           { text: "Introduction", link: "/lessons/introduction" },
           { text: "Code", link: "/lessons/code" },
+          { text: "Package", link: "/lessons/package" },
         ],
       },
       {
         text: "Labs",
         collapsed: true,
-        items: [{ text: "Tools", link: "/labs/tools" }],
+        items: [
+          { text: "Tools", link: "/labs/tools" },
+          { text: "Docker", link: "/labs/docker" },
+        ],
       },
     ],
     socialLinks: [
