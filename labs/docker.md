@@ -5,6 +5,7 @@
 - Estimer son travail
 - Dockeriser une application
 - Créer un Docker Compose
+- Appliquer les bonnes pratiques
 
 ## Rendu
 
@@ -26,17 +27,23 @@
   | ... | ... | ... | ... |
   | Total | 2h | 1h30 | ... |
 
+### Git
+
+- Mettez tout votre travail sur une branche `feature/02-docker` et faites une merge request (MR) sur `main`
+- Séparez votre travail en commits cohérents
+- Utilisez des messages de commit clairs et concis
+
 ### Docker
 
 - Dockeriser les deux applications `frontend` et `backend` du précédent laboratoire
   - On doit pouvoir construire et démarrer les deux applications depuis leur dossier respectif
+  - Regardez dans les documentations officielles des frameworks pour trouver des exemples de Dockerfile
+  - Suivez les bonnes pratiques pour les Dockerfiles
     - Frontend
-      - `docker build -t frontend . && docker run -p 5174:5174 frontend`
-      - Il existe un exemple de Dockerfile dans la documentation officielle de Vue 2
       - Utilisez [nginx](https://nginx.org/) comme serveur web
+      - `docker build -t frontend . && docker run -p 5174:5174 frontend`
     - Backend
       - `docker build -t backend . && docker run -p 8000:8000 backend`
-      - Il existe un exemple de Dockerfile pour Poetry dans la documentation officielle de FastAPI
   - N'oubliez pas le [`.dockerignore`](https://docs.docker.com/engine/reference/builder/#dockerignore-file)
 - Dans votre rapport, justifier vos choix dans vos Dockerfiles
 
@@ -58,6 +65,7 @@
   - Exposez le port 5432
   - Ajoutez un volume pour persister les données (on doit pouvoir supprimer le conteneur `docker-compose rm` et le recréer sans perdre les données)
   - Vous pouvez utiliser [DBeaver](https://dbeaver.io/) pour visualiser les données
+- Indiquez les dépendances entre les services
 - Dans votre rapport, justifier vos choix pour le docker compose et la database
 
 ## Evaluation
@@ -67,6 +75,7 @@
 Pour atteindre le 4 :
 
 - Le rapport est complet et bien structuré
+- Le rendu sur GitLab est correct et dans les temps
 - Le docker-compose fonctionne (on peut démarrer les deux applications et la base de données)
 
 ### Critères d'amélioration
@@ -75,5 +84,5 @@ Pour atteindre le 6 :
 
 - Le rapport est bien écrit et agréable à lire
 - Bonne justification des choix techniques (utilisation des bonnes pratiques)
-- Persistance des données et dockerignore
 - Lisibilité des Dockerfiles et du docker-compose
+- Persistance des données, dockerignore et dépendances des services

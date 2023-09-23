@@ -5,6 +5,12 @@
 
 // https://vitepress.dev/guide/extending-default-theme#customizing-css
 
+.copyright {
+  img {
+    margin: auto;
+  }
+}
+
 .current {
   scroll-margin-top: 20em;
   &.week {
