@@ -1,5 +1,8 @@
 /**
+ * Must be loaded after markdown plugin
+ *
  * https://github.com/zjffun/reveal.js-mermaid-plugin/blob/main/plugin/mermaid/plugin.js
+ * https://github.com/reveal-plantuml/reveal-plantuml.github.io/blob/master/src/index.js
  */
 import mermaid, { MermaidConfig } from "mermaid";
 import { Api } from "reveal.js";
@@ -20,7 +23,8 @@ export default () => ({
     });
 
     const mermaidElements =
-      reveal.getRevealElement()?.querySelectorAll(".mermaid") ?? [];
+      reveal.getRevealElement()?.querySelectorAll(".reveal pre code.mermaid") ??
+      [];
     mermaidElements.forEach(function (element: Element) {
       try {
         mermaid
@@ -29,7 +33,14 @@ export default () => ({
             element.textContent?.trim() ?? ""
           )
           .then(({ svg }) => {
-            element.innerHTML = svg;
+            const div = document.createElement("div");
+            div.classList.add("mermaid");
+            div.innerHTML = svg;
+
+            const pre = element.parentElement;
+            pre?.parentNode?.replaceChild(div, pre);
+
+            window.dispatchEvent(new Event("resize"));
           });
       } catch (error) {
         element.innerHTML = error.str;

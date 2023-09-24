@@ -111,56 +111,41 @@
         - &shy;<!-- .element: class="fragment" --> **tag** : v0.1.0, v1.0.0, ... sur main
         - &shy;<!-- .element: class="fragment" --> **feature** : branche par fonctionnalité
         - &shy;<!-- .element: class="fragment" --> Historique **linéaire**, fast-forward merge après rebase
+---
+        #### Feature branch
+        ```mermaid
+        gitGraph
+          commit id: "feat: initialize"
+          branch develop
+          commit id: "feat: add a"
+          branch feature/1
+          commit id: "feat: add 1a"
+          commit id: "feat: add 1b"
+          checkout develop
+          commit id: "feat: add b"
+        ```
+---
+        #### Merge to develop
+        ```mermaid
+        gitGraph
+          commit id: "feat: initialize"
+          branch develop
+          commit id: "feat: add a"
+          commit id: "feat: add b"
+          commit id: "feat: add 1a"
+          commit id: "feat: add 1b"
+        ```
+---
+        #### Deploy
+        ```mermaid
+        gitGraph
+          commit id: "feat: initialize"
+          commit id: "feat: add a"
+          commit id: "feat: add b"
+          commit id: "feat: add 1a"
+          commit id: "feat: add 1b" tag: "v0.1.0"
+        ```
       </textarea>
-    </section>
-    <section data-auto-animate>
-      <div class="mermaid r-stretch">
-        <pre>
----
-title: Feature branch
----
-gitGraph
-  commit id: "feat: initialize"
-  branch develop
-  commit id: "feat: add a"
-  branch feature/1
-  commit id: "feat: add 1a"
-  commit id: "feat: add 1b"
-  checkout develop
-  commit id: "feat: add b"
-        </pre>
-      </div>
-    </section>
-    <section data-auto-animate>
-      <div class="mermaid r-stretch">
-        <pre>
----
-title: Merge to develop
----
-gitGraph
-  commit id: "feat: initialize"
-  branch develop
-  commit id: "feat: add a"
-  commit id: "feat: add b"
-  commit id: "feat: add 1a"
-  commit id: "feat: add 1b"
-        </pre>
-      </div>
-    </section>
-    <section data-auto-animate>
-      <div class="mermaid r-stretch">
-        <pre>
----
-title: Deploy
----
-gitGraph
-  commit id: "feat: initialize"
-  commit id: "feat: add a"
-  commit id: "feat: add b"
-  commit id: "feat: add 1a"
-  commit id: "feat: add 1b" tag: "v0.1.0"
-        </pre>
-      </div>
     </section>
   </Reveate>
 </template>

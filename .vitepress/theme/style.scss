@@ -5,6 +5,8 @@
 
 // https://vitepress.dev/guide/extending-default-theme#customizing-css
 
+$slides-height: 512px;
+
 .copyright {
   img {
     margin: auto;
@@ -24,7 +26,7 @@
 
 .reveal {
   &.embedded {
-    height: 512px;
+    height: $slides-height;
     border: 1px solid rgba(0, 0, 0, 0.2);
   }
 
@@ -50,7 +52,9 @@
   .mermaid {
     svg {
       height: 100%;
-      width: 100%;
+      width: 100% !important;
+      max-height: $slides-height;
+      max-width: unset !important;
     }
   }
 }

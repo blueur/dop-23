@@ -45,7 +45,7 @@ onBeforeMount(() => {
       hash: true,
       pdfMaxPagesPerSlide: 1,
       pdfSeparateFragments: false,
-      plugins: [Katex, Mermaid, RevealMarkdown, RevealNotes],
+      plugins: [RevealMarkdown, RevealNotes, Katex, Mermaid],
       slideNumber: true,
       transition: "fade",
       transitionSpeed: "fast",
