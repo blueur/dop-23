@@ -2,7 +2,7 @@
   <Reveate>
     <section data-auto-animate data-markdown>
       <textarea data-template>
-        # Package
+        # Artefact
         DevOps
 ---
         ## Cycle de vie d'un programme
@@ -75,6 +75,79 @@
 ---
         ![](https://jfrog--c.documentforce.com/servlet/servlet.ImageServer?id=01569000008kqFT&oid=00D20000000M3v0)
         https://jfrog.com/devops-tools/article/understanding-and-building-docker-images/ <!-- .element: class="reference" target="_blank" -->
+---
+        ### Dockerfile
+        ```dockerfile
+        FROM python:3
+
+        WORKDIR /usr/src/app
+
+        COPY requirements.txt ./
+        RUN pip install --no-cache-dir -r requirements.txt
+
+        COPY . .
+
+        CMD [ "python", "./your-daemon-or-script.py" ]
+        ```
+        - &shy;<!-- .element: class="fragment" --> Recette pour **construire** une image
+        - &shy;<!-- .element: class="fragment" --> [Bonnes pratiques](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/) sur le site de Docker <!-- .element: target="_blank" -->
+---
+        ### Couches
+        ![](https://docs.docker.com/build/guide/images/layers.png)
+        https://docs.docker.com/build/guide/layers/ <!-- .element: class="reference" target="_blank" -->
+        - &shy;<!-- .element: class="fragment" --> Image = couches de **diff** de fichiers
+---
+        ### Cache des couches
+        ![](https://docs.docker.com/build/guide/images/reordered-layers.png)
+        https://docs.docker.com/build/guide/layers/ <!-- .element: class="reference" target="_blank" -->
+        - &shy;<!-- .element: class="fragment" --> **Ordre** des couches pour le **cache**
+        - &shy;<!-- .element: class="fragment" --> Du plus **stable** (dépendances)  
+          au plus **volatile** (code)
+---
+        ### Container
+        ![](https://docs.docker.com/storage/storagedriver/images/sharing-layers.jpg)
+        https://docs.docker.com/storage/storagedriver/ <!-- .element: class="reference" target="_blank" -->
+        - &shy;<!-- .element: class="fragment" --> **Partage** des couches entre les containers
+---
+        ### Multi-stage builds
+        ```dockerfile [1-4|6-9|7]
+        FROM maven:3.5.0-jdk-8-alpine AS builder
+        ADD ./pom.xml pom.xml
+        ADD ./src src/
+        RUN mvn clean package
+
+        FROM openjdk:8-jre-alpine
+        COPY --from=builder target/my-app.jar my-app.jar
+        EXPOSE 8080
+        CMD ["java", "-jar", "my-app.jar"]
+        ```
+        - &shy;<!-- .element: class="fragment" --> **Compiler** dans une image
+            - &shy;<!-- .element: class="fragment" --> **Léger** (pas de JDK dans l'image finale)
+        - &shy;<!-- .element: class="fragment" --> **Réutiliser** des couches
+---
+        ### Taille des images
+        - &shy;<!-- .element: class="fragment" --> Taille de l'image = **somme** des couches
+        - &shy;<!-- .element: class="fragment" --> Inclure que les fichiers **nécessaire**
+        - &shy;<!-- .element: class="fragment" --> Utiliser les **multi-stage builds**
+        - &shy;<!-- .element: class="fragment" --> Préférer la version **alpine** des images
+            - &shy;<!-- .element: class="fragment" --> [Alpine Linux](https://alpinelinux.org/) <!-- .element: target="_blank" --> est une distribution **légère**
+              - &shy;<!-- .element: class="fragment" --> `python:3.11` ~360 Mo
+              - &shy;<!-- .element: class="fragment" --> `python:3.11-alpine` ~18 Mo
+            - &shy;<!-- .element: class="fragment" --> Moins de packages **pré-installés**
+            - &shy;<!-- .element: class="fragment" --> Parfois des problèmes de **compatibilité**
+---
+        ### Dockerignore
+        - &shy;<!-- .element: class="fragment" --> Lors d'un build : `docker build -t my-image .`
+        - &shy;<!-- .element: class="fragment" --> Envoi de tous les fichiers du **context** (répertoire courant) au **daemon**
+        - &shy;<!-- .element: class="fragment" --> Utiliser un fichier [.dockerignore](https://docs.docker.com/engine/reference/builder/#dockerignore-file) pour **exclure** des fichiers -> build plus rapide
+        - &shy;<!-- .element: class="fragment" --> Exemple : 
+            ```dockerignore
+            # Ignore all files
+            *
+            # Allow files and directories
+            !src/
+            !pom.xml
+            ```
 ---
         ## Artefact
         - &shy;<!-- .element: class="fragment" --> **Résultat** d'un **build**

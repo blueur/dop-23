@@ -35,7 +35,7 @@ export default defineConfig({
         items: [
           { text: "Introduction", link: "/lessons/introduction" },
           { text: "Code", link: "/lessons/code" },
-          { text: "Package", link: "/lessons/package" },
+          { text: "Artefact", link: "/lessons/artefact" },
         ],
       },
       {

@@ -15,6 +15,7 @@
 <script setup lang="ts">
 import "reveal.js/dist/reveal.css";
 import "reveal.js/dist/theme/white.css";
+import "reveal.js/plugin/highlight/monokai.css";
 
 import { Api } from "reveal.js";
 import { computed, onBeforeMount } from "vue";
@@ -39,18 +40,26 @@ const printPath = computed<string>(
 
 onBeforeMount(() => {
   import("reveal.js").then((module) => {
-    revealApi = new module.default({
-      autoAnimateDuration: 0.25,
-      embedded: embedded.value,
-      hash: true,
-      pdfMaxPagesPerSlide: 1,
-      pdfSeparateFragments: false,
-      plugins: [RevealMarkdown, RevealNotes, Katex, Mermaid],
-      slideNumber: true,
-      transition: "fade",
-      transitionSpeed: "fast",
+    import("reveal.js/plugin/highlight/highlight").then((highlight) => {
+      revealApi = new module.default({
+        autoAnimateDuration: 0.25,
+        embedded: embedded.value,
+        hash: true,
+        pdfMaxPagesPerSlide: 1,
+        pdfSeparateFragments: false,
+        plugins: [
+          RevealMarkdown,
+          highlight.default,
+          RevealNotes,
+          Katex,
+          Mermaid,
+        ],
+        slideNumber: true,
+        transition: "fade",
+        transitionSpeed: "fast",
+      });
+      revealApi.initialize();
     });
-    revealApi.initialize();
   });
 });
 

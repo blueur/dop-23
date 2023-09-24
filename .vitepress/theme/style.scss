@@ -45,6 +45,19 @@ $slides-height: 512px;
   strong {
     color: var(--vp-c-danger-1);
   }
+  table {
+    display: inherit;
+    overflow-x: inherit;
+
+    tr {
+      background-color: inherit !important;
+      border: inherit;
+      transition: inherit;
+      td {
+        font-size: inherit;
+      }
+    }
+  }
 
   .reference {
     font-size: small;
