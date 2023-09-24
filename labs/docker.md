@@ -84,5 +84,6 @@ Pour atteindre le 6 :
 
 - Le rapport est bien écrit et agréable à lire
 - Bonne justification des choix techniques (utilisation des bonnes pratiques)
-- Lisibilité des Dockerfiles et du docker-compose
-- Persistance des données, dockerignore et dépendances des services
+- Lisibilité du code
+- Les commits sont cohérents et bien structurés
+- Persistance des données, dockerignore, dépendances des services, ...
