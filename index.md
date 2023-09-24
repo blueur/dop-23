@@ -11,7 +11,7 @@ title: Home
 | Date       | Semaine | Cours (13:15 - 14:45)                                            | Laboratoires (14:55 - 16:30)    |
 | ---------- | :-----: | ---------------------------------------------------------------- | ------------------------------- |
 | 2023-09-20 |   01    | [Introduction](./lessons/introduction)<br>[Code](./lessons/code) | [Outils](./labs/tools)          |
-| 2023-09-27 |   02    | [Artefact](./lessons/artefact)                                   | [Docker](./labs/docker) (noté)  |
+| 2023-09-27 |   02    | [Artefact](./lessons/artefact)<br>[Développement](./lessons/dev) | [Docker](./labs/docker) (noté)  |
 | 2023-10-04 |   03    |                                                                  |                                 |
 | 2023-10-11 |   04    |                                                                  |                                 |
 | 2023-10-18 |   05    |                                                                  |                                 |

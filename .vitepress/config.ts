@@ -36,6 +36,7 @@ export default defineConfig({
           { text: "Introduction", link: "/lessons/introduction" },
           { text: "Code", link: "/lessons/code" },
           { text: "Artefact", link: "/lessons/artefact" },
+          { text: "Développement", link: "/lessons/dev" },
         ],
       },
       {
