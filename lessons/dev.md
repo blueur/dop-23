@@ -16,3 +16,4 @@ import Dev from '@/components/lessons/dev.vue'
 ## Références
 
 - https://12factor.net/fr/
+- https://docs.docker.com/compose/

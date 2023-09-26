@@ -68,7 +68,40 @@
         - &shy;<!-- .element: class="fragment" --> Par exemple : migration de la base de données
         - &shy;<!-- .element: class="fragment" --> Livrées avec le code de l'application
 ---
-        ## Environnement de développement
+        ## Environnement local
+        - &shy;<!-- .element: class="fragment" --> **Déployer** l'application sur sa **machine** 
+            - &shy;<!-- .element: class="fragment" --> **similaire** à la production
+        - &shy;<!-- .element: class="fragment" --> **Docker** : virtualise une machine
+        - &shy;<!-- .element: class="fragment" --> **Docker Compose** : virtualise un réseau de machines (avec des sous-réseaux)
+---
+        ## Docker Compose
+        - &shy;<!-- .element: class="fragment" --> **Définition** des services dans un fichier YAML `docker-compose.yml`
+        - &shy;<!-- .element: class="fragment" --> **Actions groupées** : 
+            - &shy;<!-- .element: class="fragment" --> `docker-compose up`, `docker-compose down`, etc.
+        - &shy;<!-- .element: class="fragment" --> **Préconfiguration** des containers : 
+            - &shy;<!-- .element: class="fragment" --> variables d'environnement, ports, volumes, réseaux, etc.
+---
+        ### Docker Compose : Exemple
+        ```yaml
+        version: '3'
+        services:
+          db:
+            image: postgres
+            environment:
+              POSTGRES_PASSWORD: password
+          web:
+            build: .
+            command: python serve.py
+            environment:
+              DATABASE_URL: 'postgres://postgres:password@db/postgres'
+            ports:
+              - "8000:8000"
+        ```
+---
+        ### Docker Compose : Utilisation
+        - &shy;<!-- .element: class="fragment" --> **environment** de développement (local)
+        - &shy;<!-- .element: class="fragment" --> **tests** d'intégration
+        - &shy;<!-- .element: class="fragment" --> **poc** (proof of concept) avec des réseaux
       </textarea>
     </section>
   </Reveate>

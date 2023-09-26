@@ -149,6 +149,12 @@
             !pom.xml
             ```
 ---
+        ### Docker Hub
+        - &shy;<!-- .element: class="fragment" --> [Docker Hub](https://hub.docker.com/) <!-- .element: target="_blank" -->
+            - &shy;<!-- .element: class="fragment" --> **Registre** d'images Docker
+            - &shy;<!-- .element: class="fragment" --> **Public** et **privé** (payant)
+        - &shy;<!-- .element: class="fragment" --> Préférez les images **officielles**
+---
         ## Artefact
         - &shy;<!-- .element: class="fragment" --> **Résultat** d'un **build**
         - &shy;<!-- .element: class="fragment" --> Terme **générique** (pas de format spécifique) du paquet
@@ -171,6 +177,17 @@
             - &shy;<!-- .element: class="fragment" --> [Version OSS](https://www.sonatype.com/nexus-repository-oss) (open-source software) <!-- .element: target="_blank" -->
         - &shy;<!-- .element: class="fragment" --> [JFrog Artifactory](https://jfrog.com/artifactory/) <!-- .element: target="_blank" -->
             - &shy;<!-- .element: class="fragment" --> Version payante plus complète que Nexus
+---
+        ## Versioning
+        - &shy;<!-- .element: class="fragment" --> [Semantic Versioning](https://semver.org/) <!-- .element: target="_blank" -->
+            - &shy;<!-- .element: class="fragment" --> `MAJOR.MINOR.PATCH`
+            - &shy;<!-- .element: class="fragment" --> `1.0.0`
+            - &shy;<!-- .element: class="fragment" --> `1.0.1` (bug fix)
+            - &shy;<!-- .element: class="fragment" --> `1.1.0` (new feature)
+            - &shy;<!-- .element: class="fragment" --> `2.0.0` (breaking change)
+        - &shy;<!-- .element: class="fragment" --> Utilisé par les **gestionnaires de paquets**
+            - &shy;<!-- .element: class="fragment" --> `^1.0.0` (>= 1.0.0 &lt; 2.0.0)
+            - &shy;<!-- .element: class="fragment" --> `~1.0.0` (>= 1.0.0 &lt; 1.1.0) 
       </textarea>
     </section>
   </Reveate>
