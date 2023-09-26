@@ -53,10 +53,10 @@
         - &shy;<!-- .element: class="fragment" --> **Redémarrage** sans perte de données
 ---
         ### X. Parité dev/prod
-        - &shy;<!-- .element: class="fragment" --> Proximité des **environnements** de développement et de production
+        - &shy;<!-- .element: class="fragment" --> **Proximité** des environnements de **développement** et de **production**
             - &shy;<!-- .element: class="fragment" --> **Temporelle** : dernière version rapidement déployée
             - &shy;<!-- .element: class="fragment" --> **Humaine** : même équipe pour les deux environnements
-            - &shy;<!-- .element: class="fragment" --> **Technique** : mêmes outils/technologies (OS, DB, etc.)
+            - &shy;<!-- .element: class="fragment" --> **Technique** : mêmes outils/technologies/versions (OS, DB, etc.)
 ---
         ### XI. Logs
         - &shy;<!-- .element: class="fragment" --> Logs traités comme des **flux** d'événements (pas de fichiers)

@@ -37,7 +37,7 @@
 ---
         #### Gestionnaire de paquets
         - &shy;<!-- .element: class="fragment" --> Maven, Gradle (Java)
-        - &shy;<!-- .element: class="fragment" --> npm, yarn (Node.js)
+        - &shy;<!-- .element: class="fragment" --> npm, pnpm, yarn (Node.js)
         - &shy;<!-- .element: class="fragment" --> APT (Advanced Packaging Tool) (Linux)
         - &shy;<!-- .element: class="fragment" --> pip, Poetry (Python)
 ---
@@ -187,7 +187,14 @@
             - &shy;<!-- .element: class="fragment" --> `2.0.0` (breaking change)
         - &shy;<!-- .element: class="fragment" --> Utilisé par les **gestionnaires de paquets**
             - &shy;<!-- .element: class="fragment" --> `^1.0.0` (>= 1.0.0 &lt; 2.0.0)
-            - &shy;<!-- .element: class="fragment" --> `~1.0.0` (>= 1.0.0 &lt; 1.1.0) 
+            - &shy;<!-- .element: class="fragment" --> `~1.0.0` (>= 1.0.0 &lt; 1.1.0)
+---
+        ## Fichier lock
+        - &shy;<!-- .element: class="fragment" --> **Verrouille** les versions des dépendances
+        - &shy;<!-- .element: class="fragment" --> Exemples :
+            - &shy;<!-- .element: class="fragment" --> `package-lock.json` (npm)
+            - &shy;<!-- .element: class="fragment" --> `poetry.lock` (Poetry)
+        - &shy;<!-- .element: class="fragment" --> À **versionner** dans le dépôt de code
       </textarea>
     </section>
   </Reveate>

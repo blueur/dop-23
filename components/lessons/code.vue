@@ -31,7 +31,7 @@
         - &shy;<!-- .element: class="fragment" --> Les modifications sont stockées dans des **commits**
         - &shy;<!-- .element: class="fragment" --> Chaque commit est **identifié** par un **hash**
         - &shy;<!-- .element: class="fragment" --> Chaque commit a un **parent**
-        - &shy;<!-- .element: class="fragment" --> Les **branches** et **tag** sont des pointeurs vers un commit
+        - &shy;<!-- .element: class="fragment" --> Les **branches** et **tags** sont des pointeurs vers un commit
         - &shy;<!-- .element: class="fragment" --> Les **branches** sont des pointeurs **mobiles**
 ---
         ### Réécriture de l'historique
