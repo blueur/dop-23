@@ -115,7 +115,7 @@ Installez et vérifiez les outils suivants (mettre à jour si nécessaire):
 
       - https://fastapi.tiangolo.com/#installation
       - `poetry add fastapi uvicorn[standard]`
-      - Créez un fichier `main.py` avec le code suivant:
+      - Créez un fichier `main.py` dans `/backend/backend` avec le code suivant:
 
         ```python
         from typing import Union
@@ -135,7 +135,7 @@ Installez et vérifiez les outils suivants (mettre à jour si nécessaire):
             return {"item_id": item_id, "q": q}
         ```
 
-      - Testez le serveur de développement avec `poetry run uvicorn main:app --reload`
+      - Testez le serveur de développement avec `poetry run uvicorn backend.main:app --reload`
       - Vous pourrez voir la documentation de l'API à l'adresse http://127.0.0.1:8000/docs
 
     - Ajoutez un fichier .gitignore adapté au projet
