@@ -2,11 +2,7 @@
 
 ## Cours
 
-<script setup>
-import { withBase } from "vitepress";
-</script>
-
-<Reveate :markdown-file="withBase('/lessons/introduction.md')" />
+<Reveate markdown-file="/lessons/introduction.md" />
 
 ## Exercices
 

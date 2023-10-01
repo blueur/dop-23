@@ -4,11 +4,7 @@
 
 ## Cours
 
-<script setup>
-import { withBase } from "vitepress";
-</script>
-
-<Reveate :markdown-file="withBase('/lessons/test.md')" />
+<Reveate markdown-file="/lessons/test.md" />
 
 ## Références
 

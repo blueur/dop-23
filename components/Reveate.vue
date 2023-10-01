@@ -5,7 +5,7 @@
       <section
         v-if="props.markdownFile"
         data-auto-animate
-        :data-markdown="props.markdownFile"
+        :data-markdown="withBase(props.markdownFile)"
       />
       <slot v-else />
     </div>
@@ -26,7 +26,7 @@ import { Api } from "reveal.js";
 import { computed, onBeforeMount } from "vue";
 import RevealMarkdown from "reveal.js/plugin/markdown/markdown";
 import RevealNotes from "reveal.js/plugin/notes/notes";
-import { useData } from "vitepress";
+import { useData, withBase } from "vitepress";
 import Mermaid from "./plugins/mermaid";
 import Katex from "./plugins/katex";
 
