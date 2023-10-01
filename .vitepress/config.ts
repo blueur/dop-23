@@ -6,7 +6,11 @@ export default defineConfig({
   title: "DevOps",
   description: "DevOps class at HEIG-VD",
   cleanUrls: true,
+  ignoreDeadLinks: [/^https?:\/\/localhost/],
   lastUpdated: true,
+  markdown: {
+    lineNumbers: true,
+  },
   srcExclude: ["**/README.md"],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
