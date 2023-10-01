@@ -2,7 +2,12 @@
   <button v-if="embedded" @click="toggleOverview">Overview</button>
   <div ref="reveal" class="reveal">
     <div class="slides">
-      <slot />
+      <section
+        v-if="props.markdownFile"
+        data-auto-animate
+        :data-markdown="props.markdownFile"
+      />
+      <slot v-else />
     </div>
   </div>
   <span v-if="embedded">
@@ -24,6 +29,15 @@ import RevealNotes from "reveal.js/plugin/notes/notes";
 import { useData } from "vitepress";
 import Mermaid from "./plugins/mermaid";
 import Katex from "./plugins/katex";
+
+const props = withDefaults(
+  defineProps<{
+    markdownFile?: string;
+  }>(),
+  {
+    markdownFile: undefined,
+  }
+);
 
 const { page } = useData();
 

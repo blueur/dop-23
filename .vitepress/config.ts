@@ -37,6 +37,7 @@ export default defineConfig({
           { text: "Code", link: "/lessons/code" },
           { text: "Artefact", link: "/lessons/artefact" },
           { text: "Développement", link: "/lessons/dev" },
+          { text: "Test automatisé", link: "/lessons/test" },
         ],
       },
       {
