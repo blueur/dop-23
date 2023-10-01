@@ -9,10 +9,10 @@
 ## Cours
 
 <script setup>
-import Code from '@/components/lessons/code.vue'
+import { withBase } from "vitepress";
 </script>
 
-<Code />
+<Reveate :markdown-file="withBase('/lessons/code.md')" />
 
 ## Références
 

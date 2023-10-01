@@ -3,7 +3,7 @@ layout: false
 ---
 
 <script setup>
-import Dev from '@/components/lessons/dev.vue'
+import { withBase } from "vitepress";
 </script>
 
-<Dev />
+<Reveate :markdown-file="withBase('/lessons/dev.md')" />

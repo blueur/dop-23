@@ -3,10 +3,10 @@
 ## Cours
 
 <script setup>
-import Introduction from '@/components/lessons/introduction.vue'
+import { withBase } from "vitepress";
 </script>
 
-<Introduction />
+<Reveate :markdown-file="withBase('/lessons/introduction.md')" />
 
 ## Exercices
 

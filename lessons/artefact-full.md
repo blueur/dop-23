@@ -3,7 +3,7 @@ layout: false
 ---
 
 <script setup>
-import Artefact from '@/components/lessons/artefact.vue'
+import { withBase } from "vitepress";
 </script>
 
-<Artefact />
+<Reveate :markdown-file="withBase('/lessons/artefact.md')" />
