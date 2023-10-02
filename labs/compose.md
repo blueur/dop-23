@@ -70,6 +70,31 @@ Pour éviter des probèmes de [CORS](https://developer.mozilla.org/fr/docs/Web/H
 
 - Indiquez votre démarche dans le rapport
 
+::: details Solution `compose.yml`
+
+```yml
+services:
+  reverse-proxy:
+    image: traefik:v2.10
+    command:
+      - "--providers.docker=true"
+      - "--entrypoints.web.address=:80"
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+  frontend:
+    labels:
+      - "traefik.http.routers.frontend.rule=PathPrefix(`/`)"
+  backend:
+    labels:
+      - "traefik.http.routers.backend.rule=PathPrefix(`/api`)"
+      - "traefik.http.routers.backend.middlewares=backend-stripprefix"
+      - "traefik.http.middlewares.backend-stripprefix.stripprefix.prefixes=/api"
+```
+
+:::
+
 ### Connecter le backend à la database
 
 - On va utiliser [SQLAlchemy](https://www.sqlalchemy.org/) pour connecter le backend à la database en suivant la [documentation de FastAPI](https://fastapi.tiangolo.com/tutorial/sql-databases/)
@@ -231,9 +256,212 @@ Base = declarative_base()
 
 ### Ajoutez un frontend
 
+- Dans le dossier `/frontend/`, ajoutez/modifiez les fichiers suivants afin de configurer les [environnements](https://vitejs.dev/guide/env-and-mode.html) et le [proxy](https://vitejs.dev/config/server-options.html#server-proxy) :
+
+::: code-group
+
+```txt [.env]
+VITE_BACKEND_URL=/api
+```
+
+```ts [env.d.ts]
+/// <reference types="vite/client" />
+
+interface ImportMetaEnv {
+  readonly VITE_BACKEND_URL: string;
+}
+
+interface ImportMeta {
+  readonly env: ImportMetaEnv;
+}
+```
+
+```ts [vite.config.ts] {14-22}
+import { fileURLToPath, URL } from "node:url";
+
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [vue()],
+  resolve: {
+    alias: {
+      "@": fileURLToPath(new URL("./src", import.meta.url)),
+    },
+  },
+  server: {
+    proxy: {
+      "/api": {
+        target: "http://127.0.0.1:8000",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+    },
+  },
+});
+```
+
+:::
+
+- On va utiliser [Pure](https://purecss.io/) comme framework CSS :
+
+  - `npm install purecss`
+  - Modifier le fichier `frontend/src/main.ts` comme suit :
+
+    ```ts
+    import "purecss/build/pure-min.css"; // [!code focus]
+
+    import { createApp } from "vue";
+    import App from "./App.vue";
+
+    createApp(App).mount("#app");
+    ```
+
+- Supprimez tous les fichiers sous `/frontend/src/assets/` et `/frontend/src/components/`
+- Sous `/frontend/src/`, créez/modifiez les fichiers suivants :
+
+::: code-group
+
+```vue [App.vue]
+<script setup lang="ts">
+import ProductManager from "./components/ProductManager.vue";
+</script>
+
+<template>
+  <ProductManager />
+</template>
+```
+
+```vue [components/ProductManager.vue]
+<script setup lang="ts">
+import { ref, onMounted, reactive } from "vue";
+
+interface CreateProduct {
+  name: string;
+  description?: string;
+  price: number;
+}
+
+interface Product {
+  id: number;
+  name: string;
+  description?: string;
+  price: number;
+}
+
+const products = ref<Product[]>([]);
+const product = reactive<CreateProduct>({
+  name: "",
+  price: 0,
+});
+
+onMounted(() => {
+  updateTable();
+});
+
+function updateTable() {
+  fetch(`${import.meta.env.VITE_BACKEND_URL}/products/`)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      products.value = data;
+    });
+}
+
+function createProduct(product: CreateProduct) {
+  fetch(`${import.meta.env.VITE_BACKEND_URL}/products/`, {
+    method: "POST",
+    body: JSON.stringify(product),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }).then(() => {
+    product.name = "";
+    product.description = undefined;
+    product.price = 0;
+    updateTable();
+  });
+}
+
+function deleteProduct(id: number) {
+  fetch(`${import.meta.env.VITE_BACKEND_URL}/products/${id}`, {
+    method: "DELETE",
+  }).then(() => {
+    updateTable();
+  });
+}
+</script>
+
+<template>
+  <table class="pure-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="product in products" :key="product.id">
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.price }}</td>
+        <td>
+          <button class="pure-button" @click="deleteProduct(product.id)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <form class="pure-form pure-form-aligned">
+    <fieldset>
+      <fieldset>
+        <div class="pure-control-group">
+          <label for="name">Name</label>
+          <input v-model="product.name" type="text" id="name" />
+          <span class="pure-form-message-inline"
+            >This is a required field.</span
+          >
+        </div>
+        <div class="pure-control-group">
+          <label for="description">Description</label>
+          <input v-model="product.description" id="description" />
+        </div>
+        <div class="pure-control-group">
+          <label for="price">Price</label>
+          <input v-model="product.price" type="number" id="price" />
+          <span class="pure-form-message-inline"
+            >This is a required field.</span
+          >
+        </div>
+        <div class="pure-controls">
+          <button
+            class="pure-button pure-button-primary"
+            @click.prevent="createProduct(product)"
+          >
+            Add product
+          </button>
+        </div>
+      </fieldset>
+    </fieldset>
+  </form>
+</template>
+```
+
+:::
+
+- Démarrez le frontend `npm run dev` et testez l'application (avec le backend et la database démarrés)
+- Vérifiez que le Docker Compose fonctionne
+
 ### Docker Registry
 
 - Poussez les images Docker sur le GitLab Registry
   - [Documentation](https://docs.gitlab.com/ee/user/packages/container_registry/)
   - Les noms des images sont préfixés par l'adresse du registry (défaut au Docker Hub)
     - Exemple: `registry.gitlab.com/username/project/image:tag`
+  - Doit fonctionner avec `docker compose push`
