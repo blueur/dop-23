@@ -304,13 +304,13 @@ export default defineConfig({
 
 :::
 
-- On va utiliser [Pure](https://purecss.io/) comme framework CSS :
+- On va utiliser [Milligram](https://milligram.io/) comme framework CSS :
 
-  - `npm install purecss`
+  - `npm install milligram`
   - Modifier le fichier `frontend/src/main.ts` comme suit :
 
     ```ts
-    import "purecss/build/pure-min.css"; // [!code focus]
+    import "milligram/dist/milligram.min.css"; // [!code focus]
 
     import { createApp } from "vue";
     import App from "./App.vue";
@@ -329,7 +329,9 @@ import ProductManager from "./components/ProductManager.vue";
 </script>
 
 <template>
-  <ProductManager />
+  <div class="container">
+    <ProductManager />
+  </div>
 </template>
 ```
 
@@ -394,62 +396,55 @@ function deleteProduct(id: number) {
 </script>
 
 <template>
-  <table class="pure-table">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Price</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="product in products" :key="product.id">
-        <td>{{ product.id }}</td>
-        <td>{{ product.name }}</td>
-        <td>{{ product.description }}</td>
-        <td>{{ product.price }}</td>
-        <td>
-          <button class="pure-button" @click="deleteProduct(product.id)">
-            Delete
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <form class="pure-form pure-form-aligned">
-    <fieldset>
-      <fieldset>
-        <div class="pure-control-group">
+  <div class="row">
+    <div class="column">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="product in products" :key="product.id">
+            <td>{{ product.id }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.description }}</td>
+            <td>{{ product.price }}</td>
+            <td>
+              <button
+                class="button button-outline"
+                @click="deleteProduct(product.id)"
+              >
+                Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="column">
+      <form>
+        <fieldset>
           <label for="name">Name</label>
           <input v-model="product.name" type="text" id="name" />
-          <span class="pure-form-message-inline"
-            >This is a required field.</span
-          >
-        </div>
-        <div class="pure-control-group">
           <label for="description">Description</label>
-          <input v-model="product.description" id="description" />
-        </div>
-        <div class="pure-control-group">
+          <textarea v-model="product.description" id="description" />
           <label for="price">Price</label>
           <input v-model="product.price" type="number" id="price" />
-          <span class="pure-form-message-inline"
-            >This is a required field.</span
-          >
-        </div>
-        <div class="pure-controls">
-          <button
-            class="pure-button pure-button-primary"
+          <input
+            class="button-primary"
+            type="submit"
+            value="Create"
             @click.prevent="createProduct(product)"
-          >
-            Add product
-          </button>
-        </div>
-      </fieldset>
-    </fieldset>
-  </form>
+          />
+        </fieldset>
+      </form>
+    </div>
+  </div>
 </template>
 ```
 
