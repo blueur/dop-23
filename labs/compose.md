@@ -34,6 +34,7 @@
   - `make dev-backend` pour démarrer le backend en mode développement
   - `make dev-frontend` pour démarrer le frontend en mode développement
   - `make dev-database` pour démarrer uniquement la database
+- Indiquez votre démarche dans le rapport
 
 ### Utiliser Traefik
 
@@ -67,133 +68,172 @@ Pour éviter des probèmes de [CORS](https://developer.mozilla.org/fr/docs/Web/H
         return {"item_id": item_id, "q": q}
     ```
 
+- Indiquez votre démarche dans le rapport
+
 ### Connecter le backend à la database
 
 - On va utiliser [SQLAlchemy](https://www.sqlalchemy.org/) pour connecter le backend à la database en suivant la [documentation de FastAPI](https://fastapi.tiangolo.com/tutorial/sql-databases/)
 
   - Installez le package `sqlalchemy` et `psycopg2` dans le backend
     `poetry add sqlalchemy psycopg2`
-  - Créez un fichier `/backend/backend/database.py`
+  - Créez/modifiez les fichiers suivants dans `/backend/backend/` afin d'avoir un service [CRUD](https://developer.mozilla.org/fr/docs/Glossary/CRUD) :
 
-    ```python
-    from sqlalchemy import create_engine
-    from sqlalchemy.ext.declarative import declarative_base
-    from sqlalchemy.orm import sessionmaker
+::: code-group
 
-    # Remplacez les valeurs par les valeurs de votre database
-    SQLALCHEMY_DATABASE_URL = "postgresql://user:password@postgresserver/db"
+```python [database.py]
+from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
 
-    engine = create_engine(SQLALCHEMY_DATABASE_URL, echo=True)
-    SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+# Remplacez les valeurs par les valeurs de votre database
+DATABASE_URL = "postgresql://user:password@postgresserver/db"
 
-    Base = declarative_base()
-    ```
+engine = create_engine(DATABASE_URL, echo=True)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
-  - Créez un fichier `/backend/backend/models.py`
+Base = declarative_base()
+```
 
-    ```python
-    from sqlalchemy import Column, Double, Integer, String
+```python [models.py]
+from sqlalchemy import Column, Double, Integer, String
 
-    from .database import Base
-
-
-    class Item(Base):
-        __tablename__ = "items"
-
-        id = Column(Integer, primary_key=True, autoincrement=True)
-        name = Column(String, index=True, nullable=False)
-        description = Column(String, index=True)
-        price = Column(Double, index=True, nullable=False)
-    ```
-
-  - Créez un fichier `/backend/backend/schemas.py`
-
-    ```python
-    from pydantic import BaseModel
+from .database import Base
 
 
-    class ItemBase(BaseModel):
-        name: str
-        description: str | None = None
-        price: float
+class Product(Base):
+    __tablename__ = "products"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    name = Column(String, index=True, nullable=False)
+    description = Column(String, index=True)
+    price = Column(Double, index=True, nullable=False)
+```
+
+```python [schemas.py]
+from pydantic import BaseModel
 
 
-    class ItemCreate(ItemBase):
-        pass
+class ProductBase(BaseModel):
+    name: str
+    description: str | None = None
+    price: float
 
 
-    class Item(ItemBase):
-        id: int
-
-        class Config:
-            from_attributes = True
-    ```
-
-  - Ajoutez les fonctions [CRUD](https://developer.mozilla.org/fr/docs/Glossary/CRUD) dans `/backend/backend/main.py`
-
-    ```python
-    from os import getenv
-
-    from fastapi import Depends, FastAPI, HTTPException
-    from sqlalchemy.orm import Session
-
-    from . import models, schemas
-    from .database import SessionLocal, engine
-
-    models.Base.metadata.create_all(bind=engine)
-
-    app = FastAPI(root_path=getenv("ROOT_PATH"))
+class ProductCreate(ProductBase):
+    pass
 
 
-    @app.get("/")
-    def read_root():
-        return {"Hello": "World"}
+class Product(ProductBase):
+    id: int
+
+    class Config:
+        from_attributes = True
+```
+
+```python [main.py]
+from os import getenv
+
+from fastapi import Depends, FastAPI, HTTPException
+from sqlalchemy.orm import Session
+
+from . import models, schemas
+from .database import SessionLocal, engine
+
+models.Base.metadata.create_all(bind=engine)
+
+app = FastAPI(root_path=getenv("ROOT_PATH"))
 
 
-    def get_db():
-        db = SessionLocal()
-        try:
-            yield db
-        finally:
-            db.close()
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
 
 
-    @app.post("/items/", response_model=schemas.Item)
-    def create_item(item: schemas.ItemCreate, db: Session = Depends(get_db)):
-        db_item = models.Item(**item.model_dump())
-        db.add(db_item)
-        db.commit()
-        db.refresh(db_item)
-        return db_item
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
 
 
-    @app.get("/items/", response_model=list[schemas.Item])
-    def read_items(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
-        return db.query(models.Item).offset(skip).limit(limit).all()
+@app.post("/products/", response_model=schemas.Product)
+def create_product(product: schemas.ProductCreate, db: Session = Depends(get_db)):
+    db_product = models.Product(**product.model_dump())
+    db.add(db_product)
+    db.commit()
+    db.refresh(db_product)
+    return db_product
 
 
-    @app.get("/items/{item_id}", response_model=schemas.Item)
-    def read_item(item_id: int, db: Session = Depends(get_db)):
-        db_item = db.query(models.Item).filter(models.Item.id == item_id).first()
-        if db_item is None:
-            raise HTTPException(status_code=404, detail="Item not found")
-        return db_item
+@app.get("/products/", response_model=list[schemas.Product])
+def read_products(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+    return db.query(models.Product).offset(skip).limit(limit).all()
 
 
-    @app.delete("/items/{item_id}", response_model=schemas.Item)
-    def delete_item(item_id: int, db: Session = Depends(get_db)):
-        db_item = read_item(item_id, db)
-        db.delete(db_item)
-        db.commit()
-        return db_item
-    ```
+@app.get("/products/{product_id}", response_model=schemas.Product)
+def read_product(product_id: int, db: Session = Depends(get_db)):
+    db_product = (
+        db.query(models.Product).filter(models.Product.id == product_id).first()
+    )
+    if db_product is None:
+        raise HTTPException(status_code=404, detail="Product not found")
+    return db_product
 
-  - Démarrez le backend `poetry run uvicorn backend.main:app --reload` et testez les endpoints sur http://localhost:8000/docs
-  - Modifiez le backend pour qu'il suive les twelve-factors et configurez-le correctement dans le Docker Compose
+
+@app.delete("/products/{product_id}", response_model=schemas.Product)
+def delete_product(product_id: int, db: Session = Depends(get_db)):
+    db_product = read_product(product_id, db)
+    db.delete(db_product)
+    db.commit()
+    return db_product
+```
+
+:::
+
+- Démarrez le backend `poetry run uvicorn backend.main:app --reload` et testez les endpoints sur http://localhost:8000/docs
+- Vérifiez que le Docker Compose fonctionne toujours `docker compose up --build` et corrigez au besoin
+  - Indiquez vos corrections dans le rapport
+- Modifiez le backend pour qu'il suive les twelve-factors app et configurez-le correctement dans le Docker Compose
+  - Utilisez les mêmes variables d'environnement que la database ainsi que leur valeur par défaut
+  - Extraire le mot de passe de la database dans un [.env](https://docs.docker.com/compose/environment-variables/set-environment-variables/#substitute-with-an-env-file) pour s'assurer qu'il soit le même dans les deux services
+  - Ajoutez une vraie dépendance à la database dans le backend en utilisant un [healthcheck](https://docs.docker.com/engine/reference/builder/#healthcheck), voici un [exemple](https://laurent-bel.medium.com/waiting-for-postgresql-to-start-in-docker-compose-c72271b3c74a)
+  - Changez le mot de passe de la database et vérifiez que le backend fonctionne toujours (il faudra peut-être supprimer le volume de la database pour la recréer)
+  - Pour lancer le backend en utilisant le `.env`, on va utiliser [python-dotenv](https://saurabh-kumar.com/python-dotenv/)
+    - `poetry add --group dev python-dotenv`
+    - `poetry run dotenv -f ../.env run uvicorn backend.main:app --reload`
+  - Indiquez vos modifications (autres que celles indiquées) dans le rapport
+
+::: details Solution `/backend/backend/database.py`
+
+```python
+from os import getenv
+
+from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
+
+postgres_user = getenv("POSTGRES_USER", "postgres")
+postgres_password = getenv("POSTGRES_PASSWORD", "postgres")
+postgres_host = getenv("POSTGRES_HOST", "localhost")
+postgres_db = getenv("POSTGRES_DB", postgres_user)
+DATABASE_URL = (
+    f"postgresql://{postgres_user}:{postgres_password}@{postgres_host}/{postgres_db}"
+)
+
+engine = create_engine(DATABASE_URL, echo=True)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+
+Base = declarative_base()
+```
+
+:::
+
+### Ajoutez un frontend
 
 ### Docker Registry
 
-- Pousser les images Docker sur le GitLab Registry
+- Poussez les images Docker sur le GitLab Registry
   - [Documentation](https://docs.gitlab.com/ee/user/packages/container_registry/)
   - Les noms des images sont préfixés par l'adresse du registry (défaut au Docker Hub)
     - Exemple: `registry.gitlab.com/username/project/image:tag`
