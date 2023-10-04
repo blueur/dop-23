@@ -2,6 +2,8 @@
 
 ## Objectifs
 
+- Connaître et différencier les types de tests
+
 ## Cours
 
 <Reveate markdown-file="/lessons/test.md" />
