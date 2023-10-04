@@ -16,6 +16,12 @@
 
 ## Tâches
 
+### Git
+
+- Mettez tout votre travail sur une branche `feature/03-compose` et faites une merge request (MR) sur `main` en m'ajoutant comme reviewer
+- Séparez votre travail en commits cohérents
+- Utilisez des messages de commit clairs et concis
+
 ### Estimer son travail
 
 - Estimez le temps total nécessaire pour réaliser ce laboratoire
