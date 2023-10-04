@@ -260,6 +260,18 @@ Base = declarative_base()
 
 :::
 
+::: details Solution `/backend/Dockerfile`
+
+Il faut ajouter des librairies supplémentaires pour que le backend fonctionne avec PostgreSQL:
+
+```dockerfile
+RUN apk add --no-cache \
+  musl-dev \
+  postgresql-dev
+```
+
+:::
+
 ### Ajoutez un frontend
 
 - Dans le dossier `/frontend/`, ajoutez/modifiez les fichiers suivants afin de configurer les [environnements](https://vitejs.dev/guide/env-and-mode.html) et le [proxy](https://vitejs.dev/config/server-options.html#server-proxy) :
