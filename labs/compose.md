@@ -466,3 +466,9 @@ function deleteProduct(id: number) {
   - Les noms des images sont préfixés par l'adresse du registry (défaut au Docker Hub)
     - Exemple: `registry.gitlab.com/username/project/image:tag`
   - Doit fonctionner avec `docker compose push`
+
+### Tester le backend
+
+- Créez un test unitaire sur le `/` (hello world) de votre backend
+  - Suivez ce [tutoriel](https://fastapi.tiangolo.com/tutorial/testing/) en plaçant le fichier dans `/backend/tests/test_main.py`
+  - On doit pouvoir lancer les tests avec `poetry run pytest`
