@@ -51,6 +51,7 @@ export default defineConfig({
           { text: "Outils", link: "/labs/tools" },
           { text: "Docker", link: "/labs/docker" },
           { text: "Compose", link: "/labs/compose" },
+          { text: "CI/CD", link: "/labs/cicd" },
         ],
       },
     ],
