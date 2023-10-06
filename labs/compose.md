@@ -113,8 +113,7 @@ services:
 
 ```python [database.py]
 from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import declarative_base, sessionmaker
 
 # Remplacez les valeurs par les valeurs de votre database
 DATABASE_URL = "postgresql://user:password@postgresserver/db"
@@ -157,7 +156,7 @@ class ProductCreate(ProductBase):
 class Product(ProductBase):
     id: int
 
-    class Config:
+    class ConfigDict:
         from_attributes = True
 ```
 
@@ -241,8 +240,7 @@ def delete_product(product_id: int, db: Session = Depends(get_db)):
 from os import getenv
 
 from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import declarative_base, sessionmaker
 
 postgres_user = getenv("POSTGRES_USER", "postgres")
 postgres_password = getenv("POSTGRES_PASSWORD", "postgres")
@@ -478,9 +476,3 @@ function deleteProduct(id: number) {
   - Les noms des images sont préfixés par l'adresse du registry (défaut au Docker Hub)
     - Exemple: `registry.gitlab.com/username/project/image:tag`
   - Doit fonctionner avec `docker compose push`
-
-### Tester le backend
-
-- Créez un test unitaire sur le `/` (hello world) de votre backend
-  - Suivez ce [tutoriel](https://fastapi.tiangolo.com/tutorial/testing/) en plaçant le fichier dans `/backend/tests/test_main.py`
-  - On doit pouvoir lancer les tests avec `poetry run pytest`
