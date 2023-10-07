@@ -42,6 +42,7 @@ export default defineConfig({
           { text: "Artefact", link: "/lessons/artefact" },
           { text: "Développement", link: "/lessons/dev" },
           { text: "Test automatisé", link: "/lessons/test" },
+          { text: "CI/CD", link: "/lessons/cicd" },
         ],
       },
       {

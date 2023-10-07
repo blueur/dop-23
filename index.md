@@ -13,8 +13,8 @@ title: Home
 | 2023-09-20 |   01    | [Introduction](./lessons/introduction)<br>[Code](./lessons/code) | [Outils](./labs/tools)             |
 | 2023-09-27 |   02    | [Artefact](./lessons/artefact)<br>[Développement](./lessons/dev) | [Docker](./labs/docker) (**noté**) |
 | 2023-10-04 |   03    | [Test automatisé](./lessons/test)                                | [Compose](./labs/compose)          |
-| 2023-10-11 |   04    | CI/CD                                                            | [CI/CD](./labs/cicd)               |
-| 2023-10-18 |   05    | **Test** (45')                                                   |                                    |
+| 2023-10-11 |   04    | [CI/CD](./lessons/cicd)                                          | [CI/CD](./labs/cicd)               |
+| 2023-10-18 |   05    | **Test** (45')                                                   | [CI/CD](./labs/cicd)               |
 | 2023-10-25 |         | _Activités interdisciplinaires_                                  | _Activités interdisciplinaires_    |
 | 2023-11-01 |   06    |                                                                  |                                    |
 | 2023-11-08 |   07    |                                                                  |                                    |

@@ -3,12 +3,14 @@
 ## Objectifs
 
 - Estimer son travail
+- Ajouter des tests unitaires en Python
+- Créer une CI/CD pipeline sur GitLab
 
 ## Rendu
 
-- Rapport individuel en Markdown sur Cyberlearn avant le prochain cours
-  - Nom du fichier: `lab04-cicd-{nom}.md`
-  - Délai: 1 semaine
+- Rapport individuel en **PDF** sur Cyberlearn
+  - Nom du fichier: `lab04-cicd-{nom}.pdf`
+  - Délai: 2 semaines
 - Mettez tout votre travail sur une branche `feature/04-cicd` et faites une merge request (MR) sur `main` en m'ajoutant comme reviewer
 - Ajoutez un lien vers le commit dans votre rapport
 
@@ -169,5 +171,6 @@ def test_read_deleted_empty_products():
       - [SAST](https://docs.gitlab.com/ee/user/application_security/sast/)
       - [Container Scanning](https://docs.gitlab.com/ee/user/application_security/container_scanning/)
     - deploy : met à jour les images Docker sur le registry
-  - Le frontend et le backend doivent être dans des jobs séparés et en parallèle
   - est déclenchée à chaque push sur `main`
+  - Le frontend et le backend doivent être dans des jobs séparés et en parallèle
+    - Chacun est exécuté uniquement lorsqu'il y a des changements dans son dossier

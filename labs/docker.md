@@ -41,9 +41,9 @@
   - Suivez les bonnes pratiques pour les Dockerfiles
     - Frontend
       - Utilisez [nginx](https://nginx.org/) comme serveur web
-      - `docker build -t frontend . && docker run -p 5174:5174 frontend`
+      - `docker build -t frontend . && docker run -p 80:80 frontend`
     - Backend
-      - `docker build -t backend . && docker run -p 8000:8000 backend`
+      - `docker build -t backend . && docker run -p 8080:80 backend`
   - N'oubliez pas le [`.dockerignore`](https://docs.docker.com/engine/reference/builder/#dockerignore-file)
 - Dans votre rapport, justifier vos choix dans vos Dockerfiles
 

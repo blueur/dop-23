@@ -193,7 +193,7 @@ CMD ["java", "-jar", "my-app.jar"]
 - &shy;<!-- .element: class="fragment" --> Envoi de tous les fichiers du **context** (répertoire courant) au **daemon**
 - &shy;<!-- .element: class="fragment" --> Utiliser un fichier [.dockerignore](https://docs.docker.com/engine/reference/builder/#dockerignore-file) pour **exclure** des fichiers -> build plus rapide
 - &shy;<!-- .element: class="fragment" --> Exemple :
-  ```dockerignore
+  ```
   # Ignore all files
   *
   # Allow files and directories
