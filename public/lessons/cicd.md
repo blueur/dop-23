@@ -90,6 +90,7 @@ sequenceDiagram
 
 - &shy;<!-- .element: class="fragment" --> [Jenkins](https://www.jenkins.io/) <!-- .element: target="_blank" -->
   - &shy;<!-- .element: class="fragment" --> Open source & on-premise
+  - &shy;<!-- .element: class="fragment" --> Jobs lancés sur un serveur (aujourd'hui aussi possible sur un container)
 - &shy;<!-- .element: class="fragment" --> [GitHub Actions](https://github.com/features/actions) <!-- .element: target="_blank" -->
   - &shy;<!-- .element: class="fragment" --> Intégré à GitHub
 - &shy;<!-- .element: class="fragment" --> [GitLab CI/CD](https://docs.gitlab.com/ee/ci/) <!-- .element: target="_blank" -->
@@ -101,7 +102,7 @@ sequenceDiagram
 
 - &shy;<!-- .element: class="fragment" --> **Pipeline**
   - &shy;<!-- .element: class="fragment" --> **Stage** (build, test, deploy, etc.)
-    - &shy;<!-- .element: class="fragment" --> **Job** exécute un **script** dans un **runner**
+    - &shy;<!-- .element: class="fragment" --> **Job** exécute un **script** par un **runner** dans un **container**
 
 ![](https://docs.gitlab.com/ee/ci/quick_start/img/pipeline_graph_v13_6.png) <!-- .element: class="fragment" -->
 
