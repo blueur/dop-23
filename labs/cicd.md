@@ -166,15 +166,17 @@ Créez une pipeline sur GitLab CI/CD qui :
   - test :
     - vérifie que les tests (du backend) passent
     - [Unit Test Reports](https://docs.gitlab.com/ee/ci/testing/unit_test_reports.html)
-    - [Code Quality](https://docs.gitlab.com/ee/ci/testing/code_quality.html)
     - [Code Coverage](https://docs.gitlab.com/ee/ci/testing/code_coverage.html)
+    - [Code Quality](https://docs.gitlab.com/ee/ci/testing/code_quality.html)
     - [Dependency Scanning](https://docs.gitlab.com/ee/user/application_security/dependency_scanning/)
     - [SAST](https://docs.gitlab.com/ee/user/application_security/sast/)
     - [Container Scanning](https://docs.gitlab.com/ee/user/application_security/container_scanning/)
   - deploy : met à jour les images Docker sur le registry
-- est déclenchée à chaque push sur `main`
+- est déclenchée à chaque push sur n'importe quelle branche
+  - le stage `deploy` n'est exécuté que sur `main`
 - Le frontend et le backend doivent être dans des jobs séparés et en parallèle
   - Chacun est exécuté uniquement lorsqu'il y a des changements dans son dossier
+    - [Parent-child pipelines ](https://docs.gitlab.com/ee/ci/pipelines/pipeline_architectures.html#parent-child-pipelines)
 
 Étapes proposées :
 
@@ -260,8 +262,6 @@ Créez une pipeline sur GitLab CI/CD qui :
     test-backend:
       stage: test
       image: python:3.11
-      needs:
-        - build-backend
       variables:
         PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
       cache:
@@ -302,8 +302,6 @@ Créez une pipeline sur GitLab CI/CD qui :
   test-backend:
     stage: test
     image: python:3.11
-    needs:
-      - build-backend
     variables:
       PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
     cache:
@@ -343,3 +341,14 @@ Créez une pipeline sur GitLab CI/CD qui :
   ```
 
   :::
+
+- N'effectuez le stage `deploy` uniquement sur la branche `main`
+  - [rules](https://docs.gitlab.com/ee/ci/yaml/#rules)
+- Transformez votre pipeline en [Directed Acyclic Graph Pipelines](https://docs.gitlab.com/ee/ci/pipelines/pipeline_architectures.html#directed-acyclic-graph-pipelines)
+- Transformez votre pipeline en [Parent-child pipelines](https://docs.gitlab.com/ee/ci/pipelines/pipeline_architectures.html#parent-child-pipelines)
+- [Optimisez vos fichiers YAML](https://docs.gitlab.com/ee/ci/yaml/yaml_optimization.html)
+- Ajoutez et configurez
+  - [Code Quality](https://docs.gitlab.com/ee/ci/testing/code_quality.html)
+  - [Dependency Scanning](https://docs.gitlab.com/ee/user/application_security/dependency_scanning/)
+  - [SAST](https://docs.gitlab.com/ee/user/application_security/sast/)
+  - [Container Scanning](https://docs.gitlab.com/ee/user/application_security/container_scanning/)
