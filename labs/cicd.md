@@ -352,3 +352,7 @@ Créez une pipeline sur GitLab CI/CD qui :
   - [Dependency Scanning](https://docs.gitlab.com/ee/user/application_security/dependency_scanning/)
   - [SAST](https://docs.gitlab.com/ee/user/application_security/sast/)
   - [Container Scanning](https://docs.gitlab.com/ee/user/application_security/container_scanning/)
+
+## Références
+
+- https://gitlab.com/blueur/heig-vd-devops

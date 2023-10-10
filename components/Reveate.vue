@@ -26,7 +26,7 @@ import { Api } from "reveal.js";
 import { computed, onBeforeMount } from "vue";
 import RevealMarkdown from "reveal.js/plugin/markdown/markdown";
 import RevealNotes from "reveal.js/plugin/notes/notes";
-import { useData, withBase } from "vitepress";
+import { useData, withBase, inBrowser } from "vitepress";
 import Mermaid from "./plugins/mermaid";
 import Katex from "./plugins/katex";
 
@@ -42,7 +42,7 @@ const props = withDefaults(
 const { page } = useData();
 
 const urlParams = new URLSearchParams(
-  typeof window !== "undefined" ? window.location.search : undefined
+  inBrowser ? window.location.search : undefined
 );
 
 let revealApi: Api | undefined = undefined;

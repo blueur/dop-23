@@ -6,17 +6,21 @@ DevOps
 
 ## CI/CD = ?
 
-- &shy;<!-- .element: class="fragment" --> CI: Continuous Integration
-- &shy;<!-- .element: class="fragment" --> CD: Continuous Delivery
-- &shy;<!-- .element: class="fragment" --> CD: Continuous Deployment
+- &shy;<!-- .element: class="fragment" --> CI: Continuous **Integration**
+  - Intégration continue
+- &shy;<!-- .element: class="fragment" --> CD: Continuous **Delivery**
+  - Distribution continue
+- &shy;<!-- .element: class="fragment" --> CD: Continuous **Deployment**
+  - Déploiement continu
 
 ---
 
-## Intégration continue
+## Continuous Integration
 
 - Problème :
   - &shy;<!-- .element: class="fragment" --> **Plusieurs** développeurs sur le même projet
   - &shy;<!-- .element: class="fragment" --> **Intégration** des modifications dans un code **commun**
+  - &shy;<!-- .element: class="fragment" --> Intégration des **services**
 - Solution :
   - &shy;<!-- .element: class="fragment" --> **Automatiser** l'intégration
     - &shy;<!-- .element: class="fragment" --> La **construction/compilation** (build)
@@ -24,7 +28,7 @@ DevOps
 
 ---
 
-## Distribution continue
+## Continuous Delivery
 
 - &shy;<!-- .element: class="fragment" --> **Automatiser** la **distribution** du logiciel
   - &shy;<!-- .element: class="fragment" --> Création de l'**artefact** (jar, Docker image, etc.)
@@ -32,10 +36,10 @@ DevOps
 
 ---
 
-## Déploiement continu
+## Continuous Deployment
 
 - &shy;<!-- .element: class="fragment" --> **Automatiser** le **déploiement** du logiciel
-  - &shy;<!-- .element: class="fragment" --> **Installation** de l'artefact sur un environnement
+  - &shy;<!-- .element: class="fragment" --> **Installation** de l'artefact sur l'environnement de **production**
   - &shy;<!-- .element: class="fragment" --> **Mise à jour** du logiciel
 
 ---
@@ -102,9 +106,9 @@ sequenceDiagram
 
 - &shy;<!-- .element: class="fragment" --> **Pipeline**
   - &shy;<!-- .element: class="fragment" --> **Stage** (build, test, deploy, etc.)
-    - &shy;<!-- .element: class="fragment" --> **Job** exécute un **script** par un **runner** dans un **container**
+    - &shy;<!-- .element: class="fragment" --> **Job** contient un **script** exécuté par un **runner** dans un **container**
 
-![](https://docs.gitlab.com/ee/ci/quick_start/img/pipeline_graph_v13_6.png) <!-- .element: class="fragment" -->
+![](https://docs.gitlab.com/ee/ci/quick_start/img/pipeline_graph_v13_6.png)
 
 ---
 
@@ -140,10 +144,10 @@ deploy-prod:
 
 ### Job et stage
 
-- &shy;<!-- .element: class="fragment" --> **Job** définit **quoi** exécuter (script)
+- **Job** définit **quoi** exécuter (script)
   - &shy;<!-- .element: class="fragment" --> Condition avec `rules`
   - &shy;<!-- .element: class="fragment" --> Dépendance avec `needs`
-- &shy;<!-- .element: class="fragment" --> **Stage** définit **quand** exécuter un job
+- **Stage** définit **quand** exécuter un job
   - &shy;<!-- .element: class="fragment" --> **Ordre** des stages (par défaut) :
     - `.pre` > `build` > `test` > `deploy` > `.post`
 
@@ -192,17 +196,18 @@ deploy-prod:
 
 - &shy;<!-- .element: class="fragment" --> DRY = Don't Repeat Yourself
 - &shy;<!-- .element: class="fragment" --> Vous pouvez **réutiliser** des pipelines
-  - &shy;<!-- .element: class="fragment" --> [extends](https://docs.gitlab.com/ee/ci/yaml/#extends) pour réutiliser un job <!-- .element: target="_blank" -->
-  - &shy;<!-- .element: class="fragment" --> [include](https://docs.gitlab.com/ee/ci/yaml/#include) pour réutiliser un fichier <!-- .element: target="_blank" -->
+  - &shy;<!-- .element: class="fragment" --> [extends](https://docs.gitlab.com/ee/ci/yaml/#extends) pour réutiliser un job (de la même pipeline) <!-- .element: target="_blank" -->
+    - &shy;<!-- .element: class="fragment" --> [YAML anchors](https://docs.gitlab.com/ee/ci/yaml/yaml_optimization.html#anchors) <!-- .element: target="_blank" -->
+  - &shy;<!-- .element: class="fragment" --> [include](https://docs.gitlab.com/ee/ci/yaml/#include) pour réutiliser un fichier externe <!-- .element: target="_blank" -->
 
 ---
 
 ### Runner
 
 - &shy;<!-- .element: class="fragment" --> Un **agent** qui exécute les jobs sur un serveur
-  - &shy;<!-- .element: class="fragment" --> SaaS runners sur GitLab.com
+  - &shy;<!-- .element: class="fragment" --> **SaaS** runners sur GitLab.com
     - &shy;<!-- .element: class="fragment" --> limité puis payant
-  - &shy;<!-- .element: class="fragment" --> Self-managed runners
+  - &shy;<!-- .element: class="fragment" --> **Self-managed** runners
     - &shy;<!-- .element: class="fragment" --> illimité mais à gérer
 - &shy;<!-- .element: class="fragment" --> [GitLab Runner](https://docs.gitlab.com/runner/) <!-- .element: target="_blank" -->
 
