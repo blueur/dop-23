@@ -16,7 +16,7 @@ title: Home
 | 2023-10-11 |   04    | [CI/CD](./lessons/cicd)                                          | [CI/CD](./labs/cicd)               |
 | 2023-10-18 |   05    | **Test** (45')                                                   | [CI/CD](./labs/cicd)               |
 | 2023-10-25 |         | _Activités interdisciplinaires_                                  | _Activités interdisciplinaires_    |
-| 2023-11-01 |   06    |                                                                  |                                    |
+| 2023-11-01 |   06    | [Orchestration](./lessons/orchestration)                         | [Kubernetes](./labs/kubernetes)    |
 | 2023-11-08 |   07    |                                                                  |                                    |
 | 2023-11-15 |   08    |                                                                  |                                    |
 | 2023-11-22 |   09    |                                                                  |                                    |

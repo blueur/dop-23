@@ -4,8 +4,10 @@ export default {
   paths() {
     return fs
       .readdirSync("lessons")
-      .filter((filename) => !filename.includes("[id]"))
+      .filter((filename) => !filename.startsWith("[id]"))
       .map((filename) => filename.split(".md")[0])
-      .map((id) => ({ params: { id } }));
+      .map((id) => {
+        return { params: { id } };
+      });
   },
 };

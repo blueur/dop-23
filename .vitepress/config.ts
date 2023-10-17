@@ -43,6 +43,10 @@ export default defineConfig({
           { text: "Développement", link: "/lessons/dev" },
           { text: "Test automatisé", link: "/lessons/test" },
           { text: "CI/CD", link: "/lessons/cicd" },
+          {
+            text: "Orchestration",
+            link: "/lessons/orchestration",
+          },
         ],
       },
       {
@@ -53,6 +57,7 @@ export default defineConfig({
           { text: "Docker", link: "/labs/docker" },
           { text: "Compose", link: "/labs/compose" },
           { text: "CI/CD", link: "/labs/cicd" },
+          { text: "Kubernetes", link: "/labs/kubernetes" },
         ],
       },
     ],
