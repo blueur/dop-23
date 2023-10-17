@@ -8,19 +8,19 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.2",
-    "katex": "^0.16.8",
-    "mermaid": "^10.4.0",
+    "katex": "^0.16.9",
+    "mermaid": "^10.5.0",
     "reveal.js": "^4.6.1",
-    "vitepress": "^1.0.0-rc.19",
+    "vitepress": "^1.0.0-rc.22",
     "vue": "^3.3.4"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.7.1",
-    "@commitlint/config-conventional": "^17.7.0",
+    "@commitlint/cli": "^17.8.0",
+    "@commitlint/config-conventional": "^17.8.0",
     "@types/katex": "^0.16.3",
-    "@types/node": "^20.6.4",
-    "@types/reveal.js": "^4.4.2",
+    "@types/node": "^20.8.6",
+    "@types/reveal.js": "^4.4.3",
     "husky": "^8.0.3",
-    "sass": "^1.68.0"
+    "sass": "^1.69.3"
   }
 }

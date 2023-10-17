@@ -34,9 +34,7 @@ const props = withDefaults(
   defineProps<{
     markdownFile?: string;
   }>(),
-  {
-    markdownFile: undefined,
-  }
+  {}
 );
 
 const { page } = useData();
