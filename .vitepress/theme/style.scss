@@ -41,6 +41,7 @@ $slides-height: 512px;
   }
   img {
     margin: auto !important;
+    height: $slides-height;
   }
   strong {
     color: var(--vp-c-danger-1);
@@ -59,6 +60,9 @@ $slides-height: 512px;
     }
   }
 
+  .code-wrapper {
+    height: $slides-height;
+  }
   .reference {
     font-size: small;
   }
