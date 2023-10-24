@@ -3,6 +3,9 @@
 ## Objectifs
 
 - Estimer son travail
+- Utiliser minikube
+- Déployer une application sur Kubernetes
+- Créer un fichier `deployment.yaml` pour déployer l'application
 
 ## Rendu
 
@@ -36,6 +39,10 @@
       - LoadBalancer
         - Scale votre Deployment à 2 replicas et vérifiez que les requêtes sont bien réparties entre les deux pods (en y accédant en navigation privée)
       - Ingress
+- Regardez les logs (au niveau du pod)
+  - Sur le dashboard, sélectionnez un pod
+    - En haut à droite, il y a plusieurs icônes, dont `View logs` et `Exec into pod`
+  - En ligne de commande, utilisez `kubectl logs` et `kubectl exec` (`kubectl get pods` pour lister les pods)
 
 ### Déployer une application
 
@@ -115,4 +122,4 @@ Déployez l'application sur Kubernetes en utilisant le dashboard.
 - Suivez les instructions pour créer une application stateless : https://kubernetes.io/docs/tasks/run-application/run-stateless-application-deployment/
 - Suivez les instructions pour créer une application stateful : https://kubernetes.io/docs/tasks/run-application/run-single-instance-stateful-application/
 - Créez un fichier `deployment.yaml` à la racine de votre repository qui permet de déployer votre application sur Kubernetes.
-  - On devra pouvoir déployer l'application avec `kubectl apply -f deployment.yaml`
+  - On devra pouvoir déployer ou mettre à jour toute l'application avec `kubectl apply -f deployment.yaml`

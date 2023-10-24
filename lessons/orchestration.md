@@ -16,6 +16,7 @@
 - https://www.redhat.com/fr/topics/containers/what-is-container-orchestration
 - https://docs.docker.com/engine/swarm/
 - https://kubernetes.io/docs/concepts/workloads/pods/
+- https://linchpiner.github.io/k8s-multi-container-pods.html
 - https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 - https://kubernetes.io/docs/concepts/services-networking/service/
 - https://kubernetes.io/docs/concepts/services-networking/ingress/

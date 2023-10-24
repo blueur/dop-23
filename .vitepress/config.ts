@@ -47,6 +47,7 @@ export default defineConfig({
             text: "Orchestration",
             link: "/lessons/orchestration",
           },
+          { text: "Déploiement", link: "/lessons/deploy" },
         ],
       },
       {

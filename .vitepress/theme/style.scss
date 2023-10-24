@@ -5,8 +5,6 @@
 
 // https://vitepress.dev/guide/extending-default-theme#customizing-css
 
-$slides-height: 512px;
-
 .copyright {
   img {
     margin: auto;
@@ -25,8 +23,10 @@ $slides-height: 512px;
 }
 
 .reveal {
+  --slides-height: 512px;
+
   &.embedded {
-    height: $slides-height;
+    height: var(--slides-height);
     border: 1px solid rgba(0, 0, 0, 0.2);
   }
 
@@ -41,7 +41,6 @@ $slides-height: 512px;
   }
   img {
     margin: auto !important;
-    height: $slides-height;
   }
   strong {
     color: var(--vp-c-danger-1);
@@ -60,9 +59,6 @@ $slides-height: 512px;
     }
   }
 
-  .code-wrapper {
-    height: $slides-height;
-  }
   .reference {
     font-size: small;
   }
@@ -70,7 +66,7 @@ $slides-height: 512px;
     svg {
       height: 100%;
       width: 100% !important;
-      max-height: $slides-height;
+      max-height: var(--slides-height);
       max-width: unset !important;
     }
   }

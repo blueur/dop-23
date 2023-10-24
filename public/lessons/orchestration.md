@@ -11,12 +11,12 @@ DevOps
 ## Orchestration
 
 - &shy;<!-- .element: class="fragment" --> **Automatiser** ...
-  - &shy;<!-- .element: class="fragment" --> l'**organisation**,
-  - &shy;<!-- .element: class="fragment" --> la **coordination** et
-  - &shy;<!-- .element: class="fragment" --> la **gestion**
+- &shy;<!-- .element: class="fragment" --> l'**organisation**, la **coordination** et la **gestion**
 - &shy;<!-- .element: class="fragment" --> ... des **conteneurs**
 
 ---
+
+## Déploiements
 
 ![](https://kubernetes.io/images/docs/Container_Evolution.svg)
 
@@ -69,7 +69,7 @@ https://docs.docker.com/engine/swarm/how-swarm-mode-works/nodes/ <!-- .element: 
 
 ### Kubernetes
 
-![](https://upload.wikimedia.org/wikipedia/commons/b/be/Kubernetes.png)
+![](https://upload.wikimedia.org/wikipedia/commons/b/be/Kubernetes.png) <!-- .element: style="height: var(--slides-height)" -->
 
 <p class="reference">
   <a href="https://commons.wikimedia.org/wiki/File:Kubernetes.png">Khtan66</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons
@@ -99,7 +99,7 @@ https://access.redhat.com/documentation/en-us/openshift_container_platform/4.7/h
 ### Alternatives
 
 - &shy;<!-- .element: class="fragment" --> **Nomad**
-  - Par **HashiCorp**
+  - Par **HashiCorp** (Vagrant, Terraform, Vault, Consul, ...)
 - &shy;<!-- .element: class="fragment" --> **Mesos**
   - Par **Apache**
 
@@ -114,7 +114,7 @@ https://access.redhat.com/documentation/en-us/openshift_container_platform/4.7/h
 
 ### Rancher
 
-![](https://ranchermanager.docs.rancher.com/assets/images/rancher-architecture-separation-of-rancher-server-b32508a12beee49d72836caa5469e585.svg)
+![](https://ranchermanager.docs.rancher.com/assets/images/rancher-architecture-separation-of-rancher-server-b32508a12beee49d72836caa5469e585.svg) <!-- .element: style="height: var(--slides-height)" -->
 
 https://ranchermanager.docs.rancher.com/reference-guides/rancher-manager-architecture/architecture-recommendations <!-- .element: class="reference" target="_blank" -->
 
@@ -122,7 +122,7 @@ https://ranchermanager.docs.rancher.com/reference-guides/rancher-manager-archite
 
 ### Rancher
 
-![](https://www.rancher.com/assets/img/logos/screen2-thumbnail-suse.svg)
+![](https://www.rancher.com/assets/img/logos/screen2-thumbnail-suse.svg) <!-- .element: style="height: var(--slides-height)" -->
 
 https://www.rancher.com/why-rancher <!-- .element: class="reference" target="_blank" -->
 
@@ -134,7 +134,7 @@ https://www.rancher.com/why-rancher <!-- .element: class="reference" target="_bl
 
 ## Kubernetes
 
-![](https://www.cncf.io/wp-content/uploads/2020/09/Kubernetes-architecture-diagram-1-1.png)
+![](https://www.cncf.io/wp-content/uploads/2020/09/Kubernetes-architecture-diagram-1-1.png) <!-- .element: style="height: var(--slides-height)" -->
 
 https://www.cncf.io/blog/2019/08/19/how-kubernetes-works/ <!-- .element: class="reference" target="_blank" -->
 
@@ -144,11 +144,11 @@ https://www.cncf.io/blog/2019/08/19/how-kubernetes-works/ <!-- .element: class="
 
 - &shy;<!-- .element: class="fragment" --> Plus petite **unité** déployable de K8s
 - &shy;<!-- .element: class="fragment" --> 1 ou plusieurs **conteneurs** qui partagent
-  - &shy;<!-- .element: class="fragment" --> le même espace **réseau**
-  - &shy;<!-- .element: class="fragment" --> le même espace de **stockage**
+  - le **réseau** (localhost)
+  - le **stockage** (volumes)
 - &shy;<!-- .element: class="fragment" --> **Phases** : Pending, Running, Succeeded, Failed, Unknown
 - &shy;<!-- .element: class="fragment" --> **Restart policy** : Always, OnFailure, Never
-- &shy;<!-- .element: class="fragment" --> **Probes** (health check) : Readiness, Liveness, Startup
+- &shy;<!-- .element: class="fragment" --> **Probes** (health check) : Startup (démarré), Readiness (prêt), Liveness (toujours en vie)
 
 ---
 
@@ -181,7 +181,7 @@ spec:
 
 ### Deployment
 
-```yaml [1-6|2|7-8,12|12-21]
+````yaml [1-6|2|7-8,12|12-21]
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -209,14 +209,15 @@ spec:
 
 ### Service
 
-- &shy;<!-- .element: class="fragment" --> **Abstraction** qui définit un ensemble de **Pods** (Reverse Proxy)
+- &shy;<!-- .element: class="fragment" --> **Reverse Proxy** sur les **Pods** (Reverse Proxy)
+  - &shy;<!-- .element: class="fragment" --> **Selector** sur les Pods
 - &shy;<!-- .element: class="fragment" --> **Load Balancing** entre les Pods
 
 ---
 
 ### Service
 
-![](https://kubernetes.io/docs/tutorials/kubernetes-basics/public/images/module_04_labels.svg)
+![](https://kubernetes.io/docs/tutorials/kubernetes-basics/public/images/module_04_labels.svg) <!-- .element: style="height: var(--slides-height)" -->
 
 https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/ <!-- .element: class="reference" target="_blank" -->
 
@@ -224,7 +225,7 @@ https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/ <!--
 
 ### Service
 
-```yaml [1-13|15-26|5-6,20-21|11-13,22-26|13,26]
+```yaml [1-13|15-26|5-6|20-21|11-13|22-26|13,26]
 apiVersion: v1
 kind: Pod
 metadata:
@@ -251,7 +252,7 @@ spec:
       protocol: TCP
       port: 80
       targetPort: http-web-svc
-```
+````
 
 ---
 
@@ -287,10 +288,8 @@ https://vocon-it.com/2018/12/10/kubernetes-4-persistent-volumes-hello-world/ <!-
 
 ### Configuration des ressources
 
-https://kubernetes.io/docs/concepts/cluster-administration/manage-deployment/ <!-- .element: class="reference" target="_blank" -->
-
 - &shy;<!-- .element: class="fragment" --> Fichier YAML pour définir les ressources
-- &shy;<!-- .element: class="fragment" --> `kubectl apply -f votre-fichier.yaml` pour les déployer
+- &shy;<!-- .element: class="fragment" --> `kubectl apply -f deployment.yaml` pour les déployer
   - Deployment
   - Service
   - Ingress
