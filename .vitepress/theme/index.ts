@@ -1,11 +1,9 @@
 // https://vitepress.dev/guide/custom-theme
-import { h } from "vue";
-import Theme from "vitepress/theme";
-
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import "./style.scss";
-
+import Theme from "vitepress/theme";
+import { h } from "vue";
 import Reveate from "../../components/Reveate.vue";
+import "./style.scss";
 
 export default {
   extends: Theme,

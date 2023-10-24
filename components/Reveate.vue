@@ -22,32 +22,30 @@ import "reveal.js/dist/reveal.css";
 import "reveal.js/dist/theme/white.css";
 import "reveal.js/plugin/highlight/monokai.css";
 
+import { useUrlSearchParams } from "@vueuse/core";
 import { Api } from "reveal.js";
-import { computed, onBeforeMount } from "vue";
 import RevealMarkdown from "reveal.js/plugin/markdown/markdown";
 import RevealNotes from "reveal.js/plugin/notes/notes";
-import { useData, withBase, inBrowser } from "vitepress";
-import Mermaid from "./plugins/mermaid";
+import { useData, withBase } from "vitepress";
+import { computed, onBeforeMount } from "vue";
 import Katex from "./plugins/katex";
+import Mermaid from "./plugins/mermaid";
 
 const props = withDefaults(
   defineProps<{
     markdownFile?: string;
   }>(),
-  {}
+  {},
 );
 
 const { page } = useData();
-
-const urlParams = new URLSearchParams(
-  inBrowser ? window.location.search : undefined
-);
+const urlParams = useUrlSearchParams("history");
 
 let revealApi: Api | undefined = undefined;
 
-const embedded = computed<boolean>(() => urlParams.get("print-pdf") == null);
+const embedded = computed<boolean>(() => urlParams["print-pdf"] == null);
 const printPath = computed<string>(
-  () => `/${page.value.relativePath.slice(0, -3)}-full?print-pdf`
+  () => `/${page.value.relativePath.slice(0, -3)}-full?print-pdf`,
 );
 
 onBeforeMount(() => {

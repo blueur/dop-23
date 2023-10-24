@@ -1,5 +1,4 @@
 import { defineConfig } from "vitepress";
-import { fileURLToPath, URL } from "node:url";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -79,12 +78,5 @@ export default defineConfig({
         link: "mailto:david.tang@heig-vd.ch",
       },
     ],
-  },
-  vite: {
-    resolve: {
-      alias: {
-        "@": fileURLToPath(new URL("..", import.meta.url)),
-      },
-    },
   },
 });

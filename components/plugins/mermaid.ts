@@ -30,7 +30,7 @@ export default () => ({
         mermaid
           .render(
             `mermaid-${Math.random().toString(36).substring(2)}`,
-            element.textContent?.trim() ?? ""
+            element.textContent?.trim() ?? "",
           )
           .then(({ svg }) => {
             const div = document.createElement("div");
