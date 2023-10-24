@@ -171,7 +171,8 @@ spec:
 
 ### Deployment
 
-- &shy;<!-- .element: class="fragment" --> Gère le **cycle de vie** des Pods
+- &shy;<!-- .element: class="fragment" --> Défini un **état souhaité** des Pods
+  - &shy;<!-- .element: class="fragment" --> Crée un **ReplicaSet** pour chaque nouvel **état**
 - &shy;<!-- .element: class="fragment" --> **Rolling update** : déploiement progressif
 - &shy;<!-- .element: class="fragment" --> **Rollback** : retour à la version précédente
 - &shy;<!-- .element: class="fragment" --> **Scaling** : augmentation ou diminution du nombre de Pods
