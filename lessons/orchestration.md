@@ -20,4 +20,5 @@
 - https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 - https://kubernetes.io/docs/concepts/services-networking/service/
 - https://kubernetes.io/docs/concepts/services-networking/ingress/
+- https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/
 - https://kubernetes.io/docs/concepts/cluster-administration/manage-deployment/

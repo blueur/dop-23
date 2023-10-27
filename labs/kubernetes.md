@@ -123,3 +123,37 @@ Déployez l'application sur Kubernetes en utilisant le dashboard.
 - Suivez les instructions pour créer une application stateful : https://kubernetes.io/docs/tasks/run-application/run-single-instance-stateful-application/
 - Créez un fichier `deployment.yaml` à la racine de votre repository qui permet de déployer votre application sur Kubernetes.
   - On devra pouvoir déployer ou mettre à jour toute l'application avec `kubectl apply -f deployment.yaml`
+
+### Google Cloud
+
+::: danger Attention
+
+La consommation des ressources sur Google Cloud est payante à la minute. Vérifiez que vous avez bien supprimé toutes vos ressources après avoir terminé ce laboratoire ou lors d'une pause prolongée.
+
+:::
+
+- Créez un compte Google Cloud avec votre adresse email HEIG-VD
+- Installez [gcloud CLI](https://cloud.google.com/sdk/docs/install?hl=fr) sur votre machine
+  - `gcloud init`
+    - Cloud project : `heig-vd-devops`
+    - Google Compute Engine zone : `europe-west6-b`
+  - `gcloud -v`
+- [Accéder au cluster](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-access-for-kubectl?hl=fr)
+  - Installez le plugin GKE `gcloud components install gke-gcloud-auth-plugin`
+    - `gke-gcloud-auth-plugin --version`
+- Configurez votre cluster `gcloud container clusters get-credentials heig-vd-dop-cluster --region=europe-west6`
+- Déployez une application d'exemple `kubectl apply -f https://storage.googleapis.com/minikube-site-examples/ingress-example.yaml`
+  - Accédez au [dashboard](https://console.cloud.google.com/kubernetes/list/overview?project=heig-vd-devops)
+    - Dans le menu de gauche, sous `Kubernetes Engine`, cliquez sur `Services & Ingress`
+    - Vous devriez voir (dans le menu tabulaire `Ingress`) un ingress `example-ingress` avec une IP externe
+    - Vous pourrez accéder à l'application sur cette IP (le déploiement prend plusieurs minutes)
+- Pour supprimer votre déploiement, utilisez `kubectl delete -f https://storage.googleapis.com/minikube-site-examples/ingress-example.yaml`
+
+Essayez aussi de déployer votre application sur Google Cloud.
+
+### Contextes
+
+Pour pouvoir utiliser plusieurs clusters Kubernetes, on peut utiliser des [contextes](https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/).
+
+- Lister les contextes: `kubectl config get-contexts`
+- Changer de contexte: `kubectl config use-context <context-name>`

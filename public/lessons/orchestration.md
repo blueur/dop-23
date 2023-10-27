@@ -286,6 +286,17 @@ https://vocon-it.com/2018/12/10/kubernetes-4-persistent-volumes-hello-world/ <!-
 
 ---
 
+### Namespace
+
+![](https://i0.wp.com/belowthemalt.com/wp-content/uploads/2022/04/image-5.png)
+
+https://belowthemalt.com/2022/04/09/kubernetes-namespaces/ <!-- .element: class="reference" target="_blank" -->
+
+- &shy;<!-- .element: class="fragment" --> **Isolation** des ressources
+  - &shy;<!-- .element: class="fragment" --> Nom **unique** au sein d'un namespace
+
+---
+
 ### Configuration des ressources
 
 - &shy;<!-- .element: class="fragment" --> Fichier YAML pour définir les ressources
