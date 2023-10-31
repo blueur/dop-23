@@ -9,4 +9,10 @@
 ## Références
 
 - https://www.redhat.com/fr/topics/automation/what-is-infrastructure-as-code-iac
+- https://www.casperfeng.com/blog/imperative-vs-declarative-iac-ansible-and-terraform-insights
+- https://www.altexsoft.com/blog/infrastructure-as-code/
+- https://www.cncf.io/blog/2022/05/09/load-balancing-for-blue-green-rolling-and-canary-deployment/
+- https://www.atlassian.com/fr/incident-management/kpis/sla-vs-slo-vs-sli
 - https://helm.sh/
+
+- https://en.wikipedia.org/wiki/Software_deployment
