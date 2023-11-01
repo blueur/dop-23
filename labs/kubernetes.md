@@ -123,6 +123,7 @@ Déployez l'application sur Kubernetes en utilisant le dashboard.
 - Suivez les instructions pour créer une application stateful : https://kubernetes.io/docs/tasks/run-application/run-single-instance-stateful-application/
 - Créez un fichier `deployment.yaml` à la racine de votre repository qui permet de déployer votre application sur Kubernetes.
   - On devra pouvoir déployer ou mettre à jour toute l'application avec `kubectl apply -f deployment.yaml`
+- Déployez votre application sur un nouveau [namespace](https://kubernetes.io/docs/tasks/administer-cluster/namespaces/)
 
 ### Google Cloud
 
@@ -142,6 +143,7 @@ La consommation des ressources sur Google Cloud est payante à la minute. Vérif
   - Installez le plugin GKE `gcloud components install gke-gcloud-auth-plugin`
     - `gke-gcloud-auth-plugin --version`
 - Configurez votre cluster `gcloud container clusters get-credentials heig-vd-dop-cluster --region=europe-west6`
+- Créez un nouveau namespace (avec votre nom) et effectuez les déploiements suivants dessus car le cluster est partagé
 - Déployez une application d'exemple `kubectl apply -f https://storage.googleapis.com/minikube-site-examples/ingress-example.yaml`
   - Accédez au [dashboard](https://console.cloud.google.com/kubernetes/list/overview?project=heig-vd-devops)
     - Dans le menu de gauche, sous `Kubernetes Engine`, cliquez sur `Services & Ingress`
@@ -150,6 +152,11 @@ La consommation des ressources sur Google Cloud est payante à la minute. Vérif
 - Pour supprimer votre déploiement, utilisez `kubectl delete -f https://storage.googleapis.com/minikube-site-examples/ingress-example.yaml`
 
 Essayez aussi de déployer votre application sur Google Cloud.
+
+Pour utiliser votre propose cluster Kubernetes, vous pouvez suivre les instructions suivantes (vous pouvez tout faire avec le dashboard):
+- [Créez un nouveau projet](https://developers.google.com/workspace/guides/create-project?hl=fr)
+- [Activer le cluster Kubernetes sur votre projet](https://cloud.google.com/kubernetes-engine/docs/how-to/creating-an-autopilot-cluster?hl=fr)
+  - Utilisez la région `europe-west6` qui est située à Zurich
 
 ### Contextes
 
