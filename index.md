@@ -18,7 +18,7 @@ title: Home
 | 2023-10-25 |         | _Activités interdisciplinaires_                                  | _Activités interdisciplinaires_           |
 | 2023-11-01 |   06    | [Orchestration](./lessons/orchestration)                         | [Kubernetes](./labs/kubernetes)           |
 | 2023-11-08 |   07    | [Déploiement](./lessons/deploy)                                  | [CI/CD Java](./labs/cicd-java) (**noté**) |
-| 2023-11-15 |   08    |                                                                  |                                           |
+| 2023-11-15 |   08    | Helm                                                             |                                           |
 | 2023-11-22 |   09    |                                                                  |                                           |
 | 2023-11-29 |   10    |                                                                  |                                           |
 | 2023-12-06 |   11    |                                                                  |                                           |

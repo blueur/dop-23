@@ -5,14 +5,19 @@ export default () => ({
   id: "katex",
   init: function (reveal: Api) {
     const revealOptions = reveal.getConfig().katex;
-    const elements =
-      reveal.getSlidesElement()?.querySelectorAll(".katex") ?? [];
-    elements.forEach(function (element: Element) {
-      katex.render(element.textContent ?? "", element as HTMLElement, {
-        output: "mathml",
-        throwOnError: false,
-        ...revealOptions,
-      });
-    });
+
+    (reveal.getSlidesElement()?.querySelectorAll("code.katex") ?? []).forEach(
+      function (element: Element) {
+        const div = document.createElement("div");
+        const pre = element.parentElement;
+        pre?.parentNode?.replaceChild(div, pre);
+
+        katex.render(element.textContent ?? "", div, {
+          output: "mathml",
+          throwOnError: false,
+          ...revealOptions,
+        });
+      },
+    );
   },
 });

@@ -83,4 +83,33 @@ https://www.cncf.io/blog/2022/05/09/load-balancing-for-blue-green-rolling-and-ca
 
 ---
 
-## SLA, SLO, SLI
+## Niveau de service
+
+- **SLA**
+  - &shy;<!-- .element: class="fragment" --> Service Level **Agreement**
+  - &shy;<!-- .element: class="fragment" --> Accord avec le **client**
+- **SLO**
+  - &shy;<!-- .element: class="fragment" --> Service Level **Objective**
+  - &shy;<!-- .element: class="fragment" --> Objectif de **qualité** du service
+- **SLI**
+  - &shy;<!-- .element: class="fragment" --> Service Level **Indicator**
+  - &shy;<!-- .element: class="fragment" --> Indicateur des **performance** réelles
+
+---
+
+## Relation
+
+- **SLA** = **SLO**s + conséquences
+- &shy;<!-- .element: class="fragment" --> **SLO** = seuil d'un **SLI**
+
+---
+
+## Exemple
+
+- **SLO** de 99.9% de disponibilité hebdomadaire
+  - ```katex
+    \frac{1}{1000} \times 7 \times 24 \times 60 = 10.08
+    ```
+  - &shy;<!-- .element: class="fragment" --> au maximum 10 minutes de panne par semaine
+- &shy;<!-- .element: class="fragment" --> **SLA** : **pénalités** de 100 CHF par minute de panne supplémentaire
+- &shy;<!-- .element: class="fragment" --> **SLI** : Le temps de panne réellement mesuré
