@@ -82,6 +82,7 @@ Pour atteindre le 4 :
 Pour atteindre le 6 :
 
 - Application des bonnes pratiques
-- Améliorer la CI/CD avec le code coverage, le SAST, le dependency scanning, etc. en indiquant comment les utiliser
-- Déployez l'application sur [HEIG-VD DevOps](https://console.cloud.google.com/kubernetes/list/overview?project=heig-vd-devops) sous le namespace `{votre nom}` grâce à votre fichier `deployment.yaml`
-- Ajoutez un déploiement automatique sur Kubernetes à la fin du pipeline CI/CD pour chaque commit sur `main`
+- Amélioration de la CI/CD avec le code coverage, le SAST, le dependency scanning, etc. en indiquant comment les utiliser
+- Déploiement de l'application sur [HEIG-VD DevOps](https://console.cloud.google.com/kubernetes/list/overview?project=heig-vd-devops) sous le namespace `{votre nom}` grâce à votre fichier `deployment.yaml`
+- Déploiement automatique sur Kubernetes à la fin du pipeline CI/CD pour chaque commit sur `main`
+- Toute amélioration de votre pipeline CI/CD est la bienvenue

@@ -58,6 +58,7 @@ export default defineConfig({
           { text: "Compose", link: "/labs/compose" },
           { text: "CI/CD", link: "/labs/cicd" },
           { text: "Kubernetes", link: "/labs/kubernetes" },
+          { text: "CI/CD Java", link: "/labs/cicd-java" },
         ],
       },
     ],
