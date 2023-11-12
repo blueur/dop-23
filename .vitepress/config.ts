@@ -47,6 +47,7 @@ export default defineConfig({
             link: "/lessons/orchestration",
           },
           { text: "Déploiement", link: "/lessons/deploy" },
+          { text: "Terraform", link: "/lessons/terraform" },
         ],
       },
       {
