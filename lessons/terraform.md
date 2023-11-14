@@ -118,9 +118,14 @@ provider "google" {
   zone    = "europe-west6-b"
 }
 
+resource "google_compute_network" "vpc_network" {
+  name = "terraform-network"
+}
+
 resource "google_compute_instance" "default" {
   name         = "terraform-instance"
   machine_type = "f1-micro"
+  tags         = ["allow-ssh"]
 
   boot_disk {
     initialize_params {
@@ -135,18 +140,112 @@ resource "google_compute_instance" "default" {
   }
 }
 
-resource "google_compute_firewall" "ssh" {
+resource "google_compute_firewall" "ssh-rule" {
   name = "allow-ssh"
+  network = google_compute_network.vpc_network.name
   allow {
-    ports    = ["22"]
     protocol = "tcp"
+    ports = ["22"]
   }
-  direction     = "INGRESS"
-  network       = google_compute_network.vpc_network.id
-  priority      = 1000
+  target_tags = ["allow-ssh"]
   source_ranges = ["0.0.0.0/0"]
-  target_tags   = ["ssh"]
 }
+```
+
+:::
+
+::: details Correction tâche 3
+
+Références :
+
+- https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_firewall
+- https://ion-utale.medium.com/create-a-vm-with-docker-installed-using-terraform-20812f6fd981
+- https://cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance?hl=fr
+
+::: code-group
+
+```hcl [main.tf]
+terraform {
+  required_providers {
+    google = {
+      source  = "hashicorp/google"
+      version = "4.51.0"
+    }
+  }
+}
+
+provider "google" {
+  credentials = file("heig-vd-devops-[...].json")
+
+  project = "heig-vd-devops"
+  region  = "europe-west6"
+  zone    = "europe-west6-b"
+}
+
+resource "google_compute_network" "vpc_network" {
+  name = "terraform-network"
+}
+
+resource "google_compute_instance" "default" {
+  name         = "terraform-instance"
+  machine_type = "f1-micro"
+  tags         = ["allow-ssh", "web"]
+
+  boot_disk {
+    initialize_params {
+      image = "debian-cloud/debian-11"
+    }
+  }
+
+  network_interface {
+    network = google_compute_network.vpc_network.name
+    access_config {
+    }
+  }
+}
+
+resource "google_compute_firewall" "ssh-rule" {
+  name = "allow-ssh"
+  network = google_compute_network.vpc_network.name
+  allow {
+    protocol = "tcp"
+    ports = ["22"]
+  }
+  target_tags = ["allow-ssh"]
+  source_ranges = ["0.0.0.0/0"]
+}
+
+resource "google_compute_firewall" "default" {
+  name    = "allow-http"
+  network = google_compute_network.vpc_network.name
+  allow {
+    protocol = "tcp"
+    ports    = ["80"]
+  }
+  target_tags = ["web"]
+}
+```
+
+```sh [startup.sh]
+# Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl gnupg
+sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
+
+# Add the repository to Apt sources:
+echo \
+  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
+  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+git clone https://gitlab.com/blueur/heig-vd-devops.git
+
+cd heig-vd-devops && docker compose up -d
 ```
 
 :::
