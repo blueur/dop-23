@@ -40,6 +40,7 @@ Check :
 
 Références :
 
+- https://developer.hashicorp.com/terraform/tutorials/kubernetes/gke
 - https://www.hashicorp.com/blog/terraform-adds-support-for-gke-autopilot
 
 ::: code-group
@@ -56,7 +57,7 @@ variable "gke_password" {
 }
 
 resource "google_container_cluster" "primary" {
-  name     = "heig-vd-dop-blueur"
+  name     = "${var.project_id}-${var.identifier}"
   location = var.region
 
   network    = google_compute_network.vpc.name
@@ -70,6 +71,7 @@ resource "google_container_cluster" "primary" {
 ```hcl [terraform.tfvars]
 project_id = "heig-vd-devops"
 region     = "europe-west6"
+identifier = "blueur"
 ```
 
 ```hcl [versions.tf]
@@ -82,6 +84,42 @@ terraform {
   }
 
   required_version = ">= 0.14"
+}
+```
+
+```hcl [vpc.tf]
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: MPL-2.0
+
+variable "project_id" {
+  description = "project id"
+}
+
+variable "region" {
+  description = "region"
+}
+
+variable "identifier" {
+  description = "identifier"
+}
+
+provider "google" {
+  project = var.project_id
+  region  = var.region
+}
+
+# VPC
+resource "google_compute_network" "vpc" {
+  name                    = "${var.project_id}-${var.identifier}-vpc"
+  auto_create_subnetworks = "false"
+}
+
+# Subnet
+resource "google_compute_subnetwork" "subnet" {
+  name          = "${var.project_id}-${var.identifier}-subnet"
+  region        = var.region
+  network       = google_compute_network.vpc.name
+  ip_cidr_range = "10.10.0.0/24"
 }
 ```
 
