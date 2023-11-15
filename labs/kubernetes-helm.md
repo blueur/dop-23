@@ -68,10 +68,8 @@ Quelles stratégies de déploiement sont disponibles dans Kubernetes ?
 
 Quelle stratégie de déploiement devriez-vous utiliser pour chacun de vos déploiements ?
 
-::: detail Réponse
-
+::: details Réponse
 Préférez le RollingUpdate pour les applications web et le Recreate pour les bases de données.
-
 :::
 
 ### Créer un Helm chart
