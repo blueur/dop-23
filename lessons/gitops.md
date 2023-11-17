@@ -2,7 +2,12 @@
 
 ## Objectifs
 
+- Comprendre les principes du GitOps
+- Comprendre ce que fait ArgoCD
+
 ## Cours
+
+<Reveate markdown-file="/lessons/gitops.md" />
 
 ## Références
 

@@ -10,20 +10,20 @@
     "@fortawesome/fontawesome-free": "^6.4.2",
     "@vueuse/core": "^10.5.0",
     "katex": "^0.16.9",
-    "mermaid": "^10.5.1",
+    "mermaid": "^10.6.1",
     "reveal.js": "^4.6.1",
-    "vitepress": "^1.0.0-rc.24",
+    "vitepress": "^1.0.0-rc.27",
     "vue": "^3.3.4"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.8.1",
     "@commitlint/config-conventional": "^17.8.1",
-    "@types/katex": "^0.16.5",
-    "@types/node": "^20.8.8",
-    "@types/reveal.js": "^4.4.5",
+    "@types/katex": "^0.16.6",
+    "@types/node": "^20.9.1",
+    "@types/reveal.js": "^4.4.6",
     "@volar/vue-typescript": "^1.6.5",
     "husky": "^8.0.3",
-    "prettier-plugin-organize-imports": "^3.2.3",
-    "sass": "^1.69.4"
+    "prettier-plugin-organize-imports": "^3.2.4",
+    "sass": "^1.69.5"
   }
 }

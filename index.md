@@ -19,8 +19,8 @@ title: Home
 | 2023-11-01 |   06    | [Orchestration](./lessons/orchestration)                         | [Kubernetes](./labs/kubernetes)             |
 | 2023-11-08 |   07    | [Déploiement](./lessons/deploy)                                  | [CI/CD Java](./labs/cicd-java) (**noté**)   |
 | 2023-11-15 |   08    | [Terraform](./lessons/terraform)                                 | [Kubernetes & Helm](./labs/kubernetes-helm) |
-| 2023-11-22 |   09    | [GitOps](./lessons/gitops)                                       |                                             |
-| 2023-11-29 |   10    | [Observabilité](./lessons/observabilite)                         |                                             |
+| 2023-11-22 |   09    | [GitOps](./lessons/gitops)                                       | [Release](./labs/release)                   |
+| 2023-11-29 |   10    | [Observabilité](./lessons/observabilite)                         | ELK                                         |
 | 2023-12-06 |   11    |                                                                  |                                             |
 | 2023-12-13 |   12    |                                                                  |                                             |
 | 2023-12-20 |   13    | **Test** (45')                                                   |                                             |
