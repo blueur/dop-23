@@ -22,3 +22,4 @@
 - https://kubernetes.io/docs/concepts/services-networking/ingress/
 - https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/
 - https://kubernetes.io/docs/concepts/cluster-administration/manage-deployment/
+- https://cloud.google.com/blog/products/containers-kubernetes/kubernetes-best-practices-setting-up-health-checks-with-readiness-and-liveness-probes

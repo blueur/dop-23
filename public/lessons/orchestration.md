@@ -181,7 +181,7 @@ spec:
 
 ### Deployment
 
-````yaml [1-6|2|7-8,12|12-21]
+```yaml [1-6|2|7-8,12|12-21]
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -252,7 +252,29 @@ spec:
       protocol: TCP
       port: 80
       targetPort: http-web-svc
-````
+```
+
+---
+
+### Probes
+
+**Health check** des Pods
+
+---
+
+#### Readiness Probe
+
+![](https://storage.googleapis.com/gweb-cloudblog-publish/original_images/google-kubernetes-probe-readiness6ktf.GIF) <!-- .element: style="height: var(--slides-height)" -->
+
+https://cloud.google.com/blog/products/containers-kubernetes/kubernetes-best-practices-setting-up-health-checks-with-readiness-and-liveness-probes <!-- .element: class="reference" target="_blank" -->
+
+---
+
+#### Liveness Probe
+
+![](https://storage.googleapis.com/gweb-cloudblog-publish/original_images/google-kubernetes-probe-livenessae14.GIF) <!-- .element: style="height: var(--slides-height)" -->
+
+https://cloud.google.com/blog/products/containers-kubernetes/kubernetes-best-practices-setting-up-health-checks-with-readiness-and-liveness-probes <!-- .element: class="reference" target="_blank" -->
 
 ---
 

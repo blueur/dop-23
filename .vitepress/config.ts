@@ -48,6 +48,8 @@ export default defineConfig({
           },
           { text: "Déploiement", link: "/lessons/deploy" },
           { text: "Terraform", link: "/lessons/terraform" },
+          { text: "GitOps", link: "/lessons/gitops" },
+          { text: "Observabilité", link: "/lessons/observabilite" },
         ],
       },
       {
@@ -60,6 +62,9 @@ export default defineConfig({
           { text: "CI/CD", link: "/labs/cicd" },
           { text: "Kubernetes", link: "/labs/kubernetes" },
           { text: "CI/CD Java", link: "/labs/cicd-java" },
+          { text: "Kubernetes & Helm", link: "/labs/kubernetes-helm" },
+          { text: "Release", link: "/labs/release" },
+          { text: "ELK", link: "/labs/elk" },
         ],
       },
     ],

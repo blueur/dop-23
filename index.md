@@ -20,8 +20,8 @@ title: Home
 | 2023-11-08 |   07    | [Déploiement](./lessons/deploy)                                  | [CI/CD Java](./labs/cicd-java) (**noté**)   |
 | 2023-11-15 |   08    | [Terraform](./lessons/terraform)                                 | [Kubernetes & Helm](./labs/kubernetes-helm) |
 | 2023-11-22 |   09    | [GitOps](./lessons/gitops)                                       | [Release](./labs/release)                   |
-| 2023-11-29 |   10    | [Observabilité](./lessons/observabilite)                         | ELK                                         |
-| 2023-12-06 |   11    |                                                                  |                                             |
+| 2023-11-29 |   10    | [Observabilité](./lessons/observabilite)                         | [ELK](./labs/elk)                           |
+| 2023-12-06 |   11    |                                                                  | Prometheus                                  |
 | 2023-12-13 |   12    |                                                                  |                                             |
 | 2023-12-20 |   13    | **Test** (45')                                                   |                                             |
 | 2023-12-27 |         | _Vacances_                                                       | _Vacances_                                  |
@@ -29,7 +29,7 @@ title: Home
 | 2024-01-10 |   14    |                                                                  |                                             |
 | 2024-01-17 |   15    |                                                                  |                                             |
 | 2024-01-24 |   16    |                                                                  |                                             |
-| TBD        |         | **Examen**                                                       |                                             |
+| TBD        |         | **Examen**                                                       | _Examen_                                    |
 
 ## Liens
 

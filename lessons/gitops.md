@@ -11,4 +11,6 @@
 
 ## Références
 
+- https://www.atlassian.com/fr/git/tutorials/gitops
+- https://www.weave.works/technologies/gitops/
 - https://argo-cd.readthedocs.io/en/stable/

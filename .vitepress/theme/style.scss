@@ -24,6 +24,7 @@
 
 .reveal {
   --slides-height: 512px;
+  --r-heading-text-transform: none;
 
   &.embedded {
     height: var(--slides-height);
