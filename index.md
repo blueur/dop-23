@@ -22,11 +22,11 @@ title: Home
 | 2023-11-22 |   09    | [GitOps](./lessons/gitops)                                       | [Release](./labs/release)                   |
 | 2023-11-29 |   10    | [Observabilité](./lessons/observabilite)                         | [ELK](./labs/elk)                           |
 | 2023-12-06 |   11    |                                                                  | Prometheus                                  |
-| 2023-12-13 |   12    |                                                                  |                                             |
-| 2023-12-20 |   13    | **Test** (45')                                                   |                                             |
+| 2023-12-13 |   12    |                                                                  | Jaeger                                      |
+| 2023-12-20 |   13    | **Test** (45')                                                   | Observabilité (**noté**)                    |
 | 2023-12-27 |         | _Vacances_                                                       | _Vacances_                                  |
 | 2024-01-03 |         | _Vacances_                                                       | _Vacances_                                  |
-| 2024-01-10 |   14    |                                                                  |                                             |
+| 2024-01-10 |   14    | Chaos engineering                                                |                                             |
 | 2024-01-17 |   15    |                                                                  |                                             |
 | 2024-01-24 |   16    |                                                                  |                                             |
 | TBD        |         | **Examen**                                                       | _Examen_                                    |

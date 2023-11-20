@@ -43,11 +43,20 @@
   img {
     margin: auto !important;
   }
+  td,
+  th,
+  tr {
+    border: 2px solid black !important;
+    background-color: inherit !important;
+    color: inherit;
+    font-size: inherit;
+    transition: inherit;
+  }
   strong {
     color: var(--vp-c-danger-1);
   }
   table {
-    display: inherit;
+    display: table;
     overflow-x: inherit;
 
     tr {
