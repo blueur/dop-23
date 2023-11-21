@@ -20,9 +20,9 @@ title: Home
 | 2023-11-08 |   07    | [Déploiement](./lessons/deploy)                                  | [CI/CD Java](./labs/cicd-java) (**noté**)   |
 | 2023-11-15 |   08    | [Terraform](./lessons/terraform)                                 | [Kubernetes & Helm](./labs/kubernetes-helm) |
 | 2023-11-22 |   09    | [GitOps](./lessons/gitops)                                       | [Release](./labs/release)                   |
-| 2023-11-29 |   10    | [Observabilité](./lessons/observabilite)                         | [ELK](./labs/elk)                           |
-| 2023-12-06 |   11    |                                                                  | Prometheus                                  |
-| 2023-12-13 |   12    |                                                                  | Jaeger                                      |
+| 2023-11-29 |   10    | [Observabilité](./lessons/observabilite)                         | [Logs](./labs/logs)                         |
+| 2023-12-06 |   11    |                                                                  | Métriques                                   |
+| 2023-12-13 |   12    |                                                                  | Traces                                      |
 | 2023-12-20 |   13    | **Test** (45')                                                   | Observabilité (**noté**)                    |
 | 2023-12-27 |         | _Vacances_                                                       | _Vacances_                                  |
 | 2024-01-03 |         | _Vacances_                                                       | _Vacances_                                  |

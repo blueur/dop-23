@@ -1,4 +1,4 @@
-# ELK
+# Logs
 
 ## Objectifs
 
@@ -8,9 +8,9 @@
 ## Rendu
 
 - Rapport individuel en **PDF** sur Cyberlearn
-  - Nom du fichier: `lab09-elk-{nom}.pdf`
+  - Nom du fichier: `lab09-logs-{nom}.pdf`
   - Délai: 1 semaine
-- Mettez tout votre travail sur une branche `feature/lab09-elk` et faites une merge request (MR) sur `main` en m'ajoutant comme reviewer
+- Mettez tout votre travail sur une branche `feature/lab09-logs` et faites une merge request (MR) sur `main` en m'ajoutant comme reviewer
 - Ajoutez un lien vers le commit dans votre rapport
 
 ## Tâches
@@ -25,3 +25,15 @@
   | ... | 30m | 45m | ... |
   | ... | ... | ... | ... |
   | Total | 2h | 1h30 | ... |
+
+### EFK sur Docker Compose
+
+- Déployez le Docker Compose suivant : https://docs.fluentd.org/container-deployment/docker-compose
+
+### ELK sur Docker Compose
+
+- Déployez le Docker Compose suivant : https://www.elastic.co/fr/blog/getting-started-with-the-elastic-stack-and-docker-compose
+
+### EFK sur Kubernetes
+
+- Déployez EFK sur Kubernetes en suivant : https://docs.fluentd.org/container-deployment/kubernetes

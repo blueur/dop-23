@@ -64,7 +64,7 @@ export default defineConfig({
           { text: "CI/CD Java", link: "/labs/cicd-java" },
           { text: "Kubernetes & Helm", link: "/labs/kubernetes-helm" },
           { text: "Release", link: "/labs/release" },
-          { text: "ELK", link: "/labs/elk" },
+          { text: "Logs", link: "/labs/logs" },
         ],
       },
     ],
