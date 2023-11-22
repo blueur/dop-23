@@ -11,7 +11,7 @@
   - Nom du fichier: `lab09-logs-{nom}.pdf`
   - Délai: 1 semaine
 - Mettez tout votre travail sur une branche `feature/lab09-logs` et faites une merge request (MR) sur `main` en m'ajoutant comme reviewer
-- Ajoutez un lien vers le commit dans votre rapport
+- Ajoutez un lien vers la merge request dans votre rapport
 
 ## Tâches
 

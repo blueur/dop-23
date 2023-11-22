@@ -11,7 +11,7 @@
   - Nom du fichier: `lab08-release-{nom}.pdf`
   - Délai: 1 semaine
 - Mettez tout votre travail sur une branche `feature/lab08-release` et faites une merge request (MR) sur `main` en m'ajoutant comme reviewer
-- Ajoutez un lien vers le commit dans votre rapport
+- Ajoutez un lien vers la merge request dans votre rapport
 
 ## Tâches
 
@@ -39,7 +39,7 @@ Que fait `mvn release:prepare` ?
 :::
 
 ::: tip Question
-Que fait `mvn release:release` ?
+Que fait `mvn release:perform` ?
 :::
 
 - Intégrez le plugin dans votre pipeline GitLab CI/CD
