@@ -43,15 +43,6 @@
   img {
     margin: auto !important;
   }
-  td,
-  th,
-  tr {
-    border: 2px solid black !important;
-    background-color: inherit !important;
-    color: inherit;
-    font-size: inherit;
-    transition: inherit;
-  }
   strong {
     color: var(--vp-c-danger-1);
   }
@@ -66,6 +57,17 @@
       td {
         font-size: inherit;
       }
+    }
+  }
+  table:not(.hljs-ln) {
+    td,
+    th,
+    tr {
+      border: 2px solid black !important;
+      background-color: inherit !important;
+      color: inherit;
+      font-size: inherit;
+      transition: inherit;
     }
   }
 

@@ -49,7 +49,7 @@ export default defineConfig({
           { text: "Déploiement", link: "/lessons/deploy" },
           { text: "Terraform", link: "/lessons/terraform" },
           { text: "GitOps", link: "/lessons/gitops" },
-          { text: "Observabilité", link: "/lessons/observabilite" },
+          { text: "Observabilité", link: "/lessons/observability" },
         ],
       },
       {

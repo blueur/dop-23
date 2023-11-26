@@ -75,6 +75,7 @@ https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure
 
 - &shy;<!-- .element: class="fragment" --> **E**lasticsearch : moteur de recherche et **base de données**
 - &shy;<!-- .element: class="fragment" --> **L**ogstash : agrège et **transforme** les données
+  - ETL : Extract-transform-load
 - &shy;<!-- .element: class="fragment" --> **K**ibana : interface de **visualisation** et d'exploration de données
 - &shy;<!-- .element: class="fragment" --> Beats : **collecte** de données (agent)
 - &shy;<!-- .element: class="fragment" --> **Open source** par **Elastic**
@@ -108,3 +109,50 @@ https://www.datawrangler.in/blog/14-elk-stack/ <!-- .element: class="reference" 
 | **Alert**     | Kibana        | Grafana      |
 
 &shy;<!-- .element: class="fragment" --> Combinable !
+
+---
+
+## Collecte
+
+- **Agent**
+  - &shy;<!-- .element: class="fragment" --> **Indépendant** du code
+  - &shy;<!-- .element: class="fragment" --> Lis la sortie standard (**stdout**) ou les fichiers de logs
+  - &shy;<!-- .element: class="fragment" --> Définition des métriques dans l'agent
+- **Client/Library**
+  - &shy;<!-- .element: class="fragment" --> Ajoute une **nouvelle dépendance** au code
+  - &shy;<!-- .element: class="fragment" --> **Modification** du code pour envoyer les logs
+  - &shy;<!-- .element: class="fragment" --> Définition des métriques dans le code
+
+---
+
+## Fluentd Java
+
+```java [1-16|3,6,13|10-13]
+import java.util.HashMap;
+import java.util.Map;
+import org.fluentd.logger.FluentLogger;
+
+public class Main {
+    private static FluentLogger LOG = FluentLogger.getLogger("fluentd.test");
+
+    public void doApplicationLogic() {
+        // ...
+        Map<String, Object> data = new HashMap<String, Object>();
+        data.put("from", "userA");
+        data.put("to", "userB");
+        LOG.log("follow", data);
+        // ...
+    }
+}
+```
+
+https://docs.fluentd.org/language-bindings/java <!-- .element: class="reference" target="_blank" -->
+
+---
+
+## Elasticsearch
+
+- &shy;<!-- .element: class="fragment" --> **Moteur de recherche** et **base de données**
+- &shy;<!-- .element: class="fragment" --> Utilise **Lucene** pour l'indexation et la recherche de **texte**
+- &shy;<!-- .element: class="fragment" --> **Cluster** de **nœuds** (distribué)
+- &shy;<!-- .element: class="fragment" --> **API** REST

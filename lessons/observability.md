@@ -9,7 +9,7 @@
 
 ## Cours
 
-<Reveate markdown-file="/lessons/observabilite.md" />
+<Reveate markdown-file="/lessons/observability.md" />
 
 ## Références
 
