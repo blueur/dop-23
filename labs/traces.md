@@ -1,4 +1,4 @@
-# Métriques
+# Traces
 
 ## Objectifs
 
@@ -7,9 +7,9 @@
 ## Rendu
 
 - Rapport individuel en **PDF** sur Cyberlearn
-  - Nom du fichier: `lab10-metrics-{nom}.pdf`
+  - Nom du fichier: `lab11-traces-{nom}.pdf`
   - Délai: 1 semaine
-- Mettez tout votre travail sur une branche `feature/lab10-metrics` et faites une merge request (MR) sur `main` en m'ajoutant comme reviewer
+- Mettez tout votre travail sur une branche `feature/lab11-traces` et faites une merge request (MR) sur `main` en m'ajoutant comme reviewer
 - Ajoutez un lien vers la merge request dans votre rapport
 
 ## Tâches
@@ -25,6 +25,6 @@
   | ... | ... | ... | ... |
   | Total | 2h | 1h30 | ... |
 
-### Métriques sur Docker
+### Traces sur Docker Compose
 
-https://docs.docker.com/config/daemon/prometheus/
+https://opentelemetry.io/docs/demo/docker-deployment/

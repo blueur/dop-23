@@ -68,7 +68,7 @@ export default defineConfig({
           { text: "Release", link: "/labs/release" },
           { text: "Logs", link: "/labs/logs" },
           { text: "Métriques", link: "/labs/metrics" },
-          { text: "Traces" },
+          { text: "Traces", link: "/labs/traces" },
           { text: "Observabilité" },
         ],
       },

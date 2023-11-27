@@ -22,7 +22,7 @@ title: Home
 | 2023-11-22 |   09    | [GitOps](./lessons/gitops)                                       | [CI/CD Java](./labs/cicd-java) (**remédiation**) |
 | 2023-11-29 |   10    | [Observabilité](./lessons/observability)                         | [Logs](./labs/logs)                              |
 | 2023-12-06 |   11    | [Télémesure](./lessons/telemetry)                                | [Métriques](./labs/metrics)                      |
-| 2023-12-13 |   12    | Trace                                                            | Traces                                           |
+| 2023-12-13 |   12    | Trace                                                            | [Traces](./labs/traces)                          |
 | 2023-12-20 |   13    | **Test** (45')                                                   | Observabilité (**noté**)                         |
 | 2023-12-27 |         | _Vacances_                                                       | _Vacances_                                       |
 | 2024-01-03 |         | _Vacances_                                                       | _Vacances_                                       |
