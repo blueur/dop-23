@@ -3,7 +3,10 @@
 ## Objectifs
 
 - Estimer son travail
-- Déployer un monitoring ELK sur Kubernetes
+- Déployer un monitoring EFK sur Docker Compose
+- Parser les logs
+- Créer un tableau de bord dans Kibana
+- Déployer un monitoring EFK sur Kubernetes
 
 ## Rendu
 

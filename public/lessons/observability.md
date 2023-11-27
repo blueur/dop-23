@@ -30,7 +30,7 @@ DevOps
   - &shy;<!-- .element: class="fragment" --> **action** de surveiller
   - &shy;<!-- .element: class="fragment" --> dit s'il y a un problème
 - **Observabilité**
-  - &shy;<!-- .element: class="fragment" --> **capacité** à surveiller
+  - &shy;<!-- .element: class="fragment" --> **capacité** à être surveillé
   - &shy;<!-- .element: class="fragment" --> capacité à trouver et comprendre le problème
   - &shy;<!-- .element: class="fragment" --> = Monitoring + Logs + Traces
 

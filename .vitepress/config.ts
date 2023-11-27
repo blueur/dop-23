@@ -33,7 +33,7 @@ export default defineConfig({
     },
     sidebar: [
       {
-        text: "Lessons",
+        text: "Cours",
         collapsed: true,
         items: [
           { text: "Introduction", link: "/lessons/introduction" },
@@ -50,10 +50,12 @@ export default defineConfig({
           { text: "Terraform", link: "/lessons/terraform" },
           { text: "GitOps", link: "/lessons/gitops" },
           { text: "Observabilité", link: "/lessons/observability" },
+          { text: "Télémesure", link: "/lessons/telemetry" },
+          { text: "Trace" },
         ],
       },
       {
-        text: "Labs",
+        text: "Laboratoires",
         collapsed: true,
         items: [
           { text: "Outils", link: "/labs/tools" },
@@ -65,6 +67,9 @@ export default defineConfig({
           { text: "Kubernetes & Helm", link: "/labs/kubernetes-helm" },
           { text: "Release", link: "/labs/release" },
           { text: "Logs", link: "/labs/logs" },
+          { text: "Métriques", link: "/labs/metrics" },
+          { text: "Traces" },
+          { text: "Observabilité" },
         ],
       },
     ],
