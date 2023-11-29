@@ -25,6 +25,14 @@
   | ... | ... | ... | ... |
   | Total | 2h | 1h30 | ... |
 
-### Métriques sur Docker
+### Prometheus et Grafana sur Docker Compose
 
-https://docs.docker.com/config/daemon/prometheus/
+Créer un Docker Compose avec Prometheus et Grafana qui collecte les métriques de notre machine :
+
+- Utiliser [Node exporter](https://github.com/prometheus/node_exporter) pour collecter les métriques de la machine
+- Suivre le tutoriel sur https://mxulises.medium.com/simple-prometheus-setup-on-docker-compose-f702d5f98579
+- Ajouter Grafana : https://github.com/docker/awesome-compose/blob/master/prometheus-grafana/README.md
+
+### Bonus : Prometheus sur Docker
+
+Pour collecter les métriques de Docker avec Prometheus : https://docs.docker.com/config/daemon/prometheus/

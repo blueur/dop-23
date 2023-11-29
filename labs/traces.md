@@ -25,6 +25,6 @@
   | ... | ... | ... | ... |
   | Total | 2h | 1h30 | ... |
 
-### Traces sur Docker Compose
+### Démonstration sur Docker Compose
 
-https://opentelemetry.io/docs/demo/docker-deployment/
+Déployer la démonstration suivante sur votre machine : https://opentelemetry.io/docs/demo/docker-deployment/
