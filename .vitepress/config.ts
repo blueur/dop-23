@@ -33,6 +33,11 @@ export default defineConfig({
     },
     sidebar: [
       {
+        text: "Outils",
+        collapsed: true,
+        items: [{ text: "Kubernetes", link: "/tools/kubernetes" }],
+      },
+      {
         text: "Cours",
         collapsed: true,
         items: [

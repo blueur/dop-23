@@ -31,6 +31,10 @@ title: Home
 | 2024-01-24 |   16    | Design Pattern                                                   | Révision                                         |
 |            |         | **Examen**                                                       | _Examen_                                         |
 
+## Outils
+
+- [Kubernetes](./tools/kubernetes)
+
 ## Liens
 
 - [Cyberlearn](https://cyberlearn.hes-so.ch/course/view.php?id=9480)
