@@ -17,10 +17,6 @@ Pour configurer votre `kubectl` local afin de pouvoir accéder au cluster Kubern
 
 Mettez à jours votre fichier `~/.kube/config` avec les informations de votre cluster : https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/#file-references
 
-::: tip Astuce
-Pour que `kubectl` ignore la vérification du certificat, ajoutez l'option `--insecure-skip-tls-verify=true`.
-:::
-
 ### Contexte
 
 Pour changer de contexte, utilisez la commande `kubectl config use-context <context>` (et pour lister `kubectl config get-contexts`).
