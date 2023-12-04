@@ -45,7 +45,6 @@ DevOps
 #### Trace & Span
 
 ![](https://miro.medium.com/v2/resize:fit:4800/format:webp/1*Yu0bCux_sulHPy6MhT9Ytg.png)
-
 https://medium.com/nikeengineering/hit-the-ground-running-with-distributed-tracing-core-concepts-ff5ad47c7058 <!-- .element: class="reference" target="_blank" -->
 
 - &shy;<!-- .element: class="fragment" --> **Trace** : ensemble de **spans** (étapes d'une requête)
@@ -74,7 +73,6 @@ https://medium.com/nikeengineering/hit-the-ground-running-with-distributed-traci
 ### Architecture
 
 ![](https://training.promlabs.com/static/prometheus-architecture-81d1251aedaf0676f61ad31e4cf19363.svg) <!-- .element: style="height: var(--slides-height)" -->
-
 https://training.promlabs.com/training/introduction-to-prometheus/prometheus-an-overview/system-architecture <!-- .element: class="reference" target="_blank" -->
 
 ---
@@ -82,7 +80,6 @@ https://training.promlabs.com/training/introduction-to-prometheus/prometheus-an-
 ## Grafana
 
 ![](https://grafana.com/media/docs/grafana/dashboards-overview/complex-dashboard-example.png) <!-- .element: style="height: var(--slides-height)" -->
-
 https://grafana.com/docs/grafana/latest/fundamentals/dashboards-overview/ <!-- .element: class="reference" target="_blank" -->
 
 ---
@@ -97,3 +94,74 @@ https://grafana.com/docs/grafana/latest/fundamentals/dashboards-overview/ <!-- .
   - &shy;<!-- .element: class="fragment" --> Recherche et analyse de **logs** (texte)
   - &shy;<!-- .element: class="fragment" --> Ne fonctionne qu'avec **Elasticsearch**
   - &shy;<!-- .element: class="fragment" --> **Alerting** avec Watcher
+
+---
+
+## Service Discovery
+
+![](https://www.nginx.com/wp-content/uploads/2016/04/Richardson-microservices-part4-1_difficult-service-discovery.png) <!-- .element: style="height: var(--slides-height)" -->
+https://www.nginx.com/blog/service-discovery-in-a-microservices-architecture/ <!-- .element: class="reference" target="_blank" -->
+
+---
+
+## Client‑Side Discovery
+
+![](https://www.nginx.com/wp-content/uploads/2016/04/Richardson-microservices-part4-2_client-side-pattern.png) <!-- .element: style="height: var(--slides-height)" -->
+https://www.nginx.com/blog/service-discovery-in-a-microservices-architecture/ <!-- .element: class="reference" target="_blank" -->
+
+---
+
+### Server‑Side Discovery
+
+![](https://www.nginx.com/wp-content/uploads/2016/04/Richardson-microservices-part4-3_server-side-pattern.png) <!-- .element: style="height: var(--slides-height)" -->
+https://www.nginx.com/blog/service-discovery-in-a-microservices-architecture/ <!-- .element: class="reference" target="_blank" -->
+
+---
+
+## Cardinalité
+
+- &shy;<!-- .element: class="fragment" --> Nombre d'**éléments distincts** dans un ensemble
+- &shy;<!-- .element: class="fragment" --> Métriques : **Nombre** de **valeurs** d'un **attribut**
+
+![](https://grafana.com/static/assets/img/blog/cardinality-spikes-diagram.jpg) <!-- .element: class="fragment" style="height: 420px" -->
+https://grafana.com/blog/2022/02/15/what-are-cardinality-spikes-and-why-do-they-matter/ <!-- .element: class="reference" target="_blank" -->
+
+---
+
+### High cardinality
+
+![](https://victoriametrics.com/blog/cardinality-explorer/cardinality_calculation.png)
+https://victoriametrics.com/blog/cardinality-explorer/ <!-- .element: class="reference" target="_blank" -->
+
+---
+
+### VM → container
+
+![](https://chronosphere.io/wp-content/uploads/2023/10/cardinality-growth-1024x576.webp)
+https://chronosphere.io/learn/what-is-high-cardinality/ <!-- .element: class="reference" target="_blank" -->
+
+---
+
+### Coûts et Problèmes
+
+- &shy;<!-- .element: class="fragment" --> **Stockage** : volume des données
+- &shy;<!-- .element: class="fragment" --> **Ressources** : CPU et RAM du système de monitoring
+- &shy;<!-- .element: class="fragment" --> **Pertes** : throughput du système de monitoring
+- &shy;<!-- .element: class="fragment" --> **Visualisation** : lisibilité des graphiques
+- &shy;<!-- .element: class="fragment" --> **Coûts** : infrastructure et maintenance ou SaaS
+
+---
+
+![](https://grafana.com/static/assets/img/blog/grafana-cardinality-metrics-quadrants.png)
+https://grafana.com/blog/2022/10/20/how-to-manage-high-cardinality-metrics-in-prometheus-and-kubernetes/ <!-- .element: class="reference" target="_blank" -->
+
+---
+
+### Optimisations
+
+- &shy;<!-- .element: class="fragment" --> **Suppression** : supprimer les labels inutiles
+  - &shy;<!-- .element: class="fragment" --> **Inutilisé**
+  - &shy;<!-- .element: class="fragment" --> **Redondant**
+- &shy;<!-- .element: class="fragment" --> **Agrégation** : réduire le nombre de valeurs
+  - &shy;<!-- .element: class="fragment" --> **Histogram** : découper les valeurs en intervalles (agrégation temporelle)
+  - &shy;<!-- .element: class="fragment" --> **Summary** : minimale, maximale, moyenne, quantiles (agrégation statistique)

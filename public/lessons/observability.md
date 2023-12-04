@@ -125,6 +125,16 @@ https://www.datawrangler.in/blog/14-elk-stack/ <!-- .element: class="reference" 
 
 ---
 
+### Agent
+
+[![](https://opentelemetry.io/docs/collector/img/otel-agent-sdk.svg)](https://opentelemetry.io/docs/collector/deployment/agent/)
+
+### Client/Library
+
+[![](https://opentelemetry.io/docs/collector/img/otel-sdk.svg)](https://opentelemetry.io/docs/collector/deployment/no-collector/)
+
+---
+
 ## Fluentd Java
 
 ```java [1-16|3,6,13|10-13]
