@@ -32,6 +32,12 @@ DevOps
 
 ---
 
+![](https://imgs.xkcd.com/comics/universal_converter_box.png)
+
+https://xkcd.com/1406 <!-- .element: class="reference" target="_blank" -->
+
+---
+
 ### Signaux
 
 - 4 [signals](https://opentelemetry.io/docs/concepts/signals/) (catégories de télémesure) :
@@ -48,6 +54,14 @@ DevOps
 https://medium.com/nikeengineering/hit-the-ground-running-with-distributed-tracing-core-concepts-ff5ad47c7058 <!-- .element: class="reference" target="_blank" -->
 
 - &shy;<!-- .element: class="fragment" --> **Trace** : ensemble de **spans** (étapes d'une requête)
+
+---
+
+#### Relations
+
+![](https://opentracing.io/img/OTHT_0.png)
+![](https://opentracing.io/img/OTHT_1.png)
+https://opentracing.io/docs/best-practices/instrumenting-your-application/ <!-- .element: class="reference" target="_blank" -->
 
 ---
 
@@ -165,3 +179,25 @@ https://grafana.com/blog/2022/10/20/how-to-manage-high-cardinality-metrics-in-pr
 - &shy;<!-- .element: class="fragment" --> **Agrégation** : réduire le nombre de valeurs
   - &shy;<!-- .element: class="fragment" --> **Histogram** : découper les valeurs en intervalles (agrégation temporelle)
   - &shy;<!-- .element: class="fragment" --> **Summary** : minimale, maximale, moyenne, quantiles (agrégation statistique)
+
+---
+
+## Semantic Conventions
+
+https://opentelemetry.io/docs/concepts/semantic-conventions/
+
+- &shy;<!-- .element: class="fragment" --> **Standard** pour les labels des métriques
+- &shy;<!-- .element: class="fragment" --> **Attribut** (key) en lowercase séparé par des points
+- &shy;<!-- .element: class="fragment" --> **Valeur** (value) en snake_case
+
+---
+
+![](https://imgs.xkcd.com/comics/iso_8601.png)
+https://xkcd.com/1179 <!-- .element: class="reference" target="_blank" -->
+
+---
+
+![](https://imgs.xkcd.com/comics/standards.png)
+https://xkcd.com/927 <!-- .element: class="reference" target="_blank" -->
+
+---
