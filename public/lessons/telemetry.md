@@ -182,13 +182,36 @@ https://grafana.com/blog/2022/10/20/how-to-manage-high-cardinality-metrics-in-pr
 
 ---
 
+### Sampling
+
+- &shy;<!-- .element: class="fragment" --> **Sampling** : ne pas collecter toutes les valeurs
+  - &shy;<!-- .element: class="fragment" --> **Sampled** trace/span : traité et stocké
+  - &shy;<!-- .element: class="fragment" --> **Not sampled** trace/span : ignoré
+
+![](https://opentelemetry.io/docs/concepts/sampling/traces-venn-diagram.svg) <!-- .element: class="fragment" style="height: 360px" -->
+https://opentelemetry.io/docs/concepts/sampling/ <!-- .element: class="reference" target="_blank" -->
+
+---
+
+#### Head vs Tail Sampling
+
+![](https://cdn.thenewstack.io/media/2020/04/eb412cd9-screen-shot-2020-04-07-at-7.12.38-pm-1024x280.png)
+https://thenewstack.io/what-you-need-to-know-about-distributed-tracing-and-sampling/ <!-- .element: class="reference" target="_blank" -->
+
+- &shy;<!-- .element: class="fragment" --> **Head sampling** : décider au début de la requête
+  - aléatoirement (p. ex. 1/1000)
+- &shy;<!-- .element: class="fragment" --> **Tail sampling** : décider à la fin de la requête
+  - si lente, erreur, contenu spécifique, etc.
+
+---
+
 ## Semantic Conventions
 
 https://opentelemetry.io/docs/concepts/semantic-conventions/
 
 - &shy;<!-- .element: class="fragment" --> **Standard** pour les labels des métriques
-- &shy;<!-- .element: class="fragment" --> **Attribut** (key) en lowercase séparé par des points
-- &shy;<!-- .element: class="fragment" --> **Valeur** (value) en snake_case
+- &shy;<!-- .element: class="fragment" --> **Attribut** (key) en snake_case séparé par des points
+  - `http.status_code`
 
 ---
 

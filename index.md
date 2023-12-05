@@ -22,14 +22,13 @@ title: Home
 | 2023-11-22 |   09    | [GitOps](./lessons/gitops)                                       | [CI/CD Java](./labs/cicd-java) (**remédiation**) |
 | 2023-11-29 |   10    | [Observabilité](./lessons/observability)                         | [Logs](./labs/logs)                              |
 | 2023-12-06 |   11    | [Télémesure](./lessons/telemetry)                                | [Métriques](./labs/metrics)                      |
-| 2023-12-13 |   12    | Trace                                                            | [Traces](./labs/traces)                          |
+| 2023-12-13 |   12    | DevSecOps                                                        | [Traces](./labs/traces)                          |
 | 2023-12-20 |   13    | **Test** (45')                                                   | Observabilité (**noté**)                         |
 | 2023-12-27 |         | _Vacances_                                                       | _Vacances_                                       |
 | 2024-01-03 |         | _Vacances_                                                       | _Vacances_                                       |
-| 2024-01-10 |   14    | **_mercredi 08:30-10:00_**<br>Sécurité                           | Observabilité (**noté**)                         |
-| 2024-01-17 |   15    | Chaos engineering                                                | [Release](./labs/release)                        |
-| 2024-01-24 |   16    |                                                                  | Révision                                         |
-|            |         | **Examen**                                                       | _Examen_                                         |
+| 2024-01-10 |   14    | **_mercredi 08:30-10:00_**<br>Chaos engineering                  | Observabilité (**noté**)                         |
+| 2024-01-17 |   15    | SRE                                                              | [Release](./labs/release)                        |
+| 2024-01-24 |   16    | **Test** (45')                                                   | Résumé                                           |
 
 ## Outils
 
@@ -38,7 +37,7 @@ title: Home
 ## Liens
 
 - [Cyberlearn](https://cyberlearn.hes-so.ch/course/view.php?id=9480)
-- [Fiche d'unité](https://gaps.heig-vd.ch/public/fiches/uv/uv.php?id=7181&plan=792)
+- [Fiche d'unité](https://gaps.heig-vd.ch/public/fiches/uv/uv.php?id=6730)
 - [Calendrier académique](https://heig-vd.ch/formation/bachelor/calendrier-academique/)
 
 ## Ressources additionnelles
