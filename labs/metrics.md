@@ -63,6 +63,10 @@ Rafraîchissez la page des métriques. Expliquez le fonctionnement de Prometheus
 - Ajoutez Prometheus à votre Docker Compose
 - Vérifiez que les métriques sont bien collectées par Prometheus
 
+::: tip Astuce
+Vous pouvez utiliser les profiles pour activer/désactiver les services liés à l'observabilité : https://docs.docker.com/compose/profiles/
+:::
+
 ### Instrumenter Nginx
 
 Cherchez comment collecter les métriques du frontend (Nginx) avec Prometheus. Qu'est-ce qui est nécessaire pour que cela fonctionne ?
@@ -76,3 +80,4 @@ Pour collecter les métriques de Docker avec Prometheus : https://docs.docker.co
 ## Références
 
 - https://github.com/blueur/prometheus
+- https://gitlab.com/blueur/heig-vd-devops/-/tree/feature/instrumentation
