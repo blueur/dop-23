@@ -56,7 +56,8 @@ export default defineConfig({
           { text: "GitOps", link: "/lessons/gitops" },
           { text: "Observabilité", link: "/lessons/observability" },
           { text: "Télémesure", link: "/lessons/telemetry" },
-          { text: "DevSecOps" },
+          { text: "DevSecOps", link: "/lessons/devsecops" },
+          { text: "Chaos engineering" },
         ],
       },
       {

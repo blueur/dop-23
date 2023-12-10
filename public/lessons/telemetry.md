@@ -222,5 +222,3 @@ https://xkcd.com/1179 <!-- .element: class="reference" target="_blank" -->
 
 ![](https://imgs.xkcd.com/comics/standards.png)
 https://xkcd.com/927 <!-- .element: class="reference" target="_blank" -->
-
----
