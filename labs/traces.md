@@ -123,6 +123,12 @@ Suivre le scénario suivant : https://opentelemetry.io/docs/demo/scenarios/recom
   - Configurer l'exportation des metrics vers [Prometheus](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/prometheusexporter)
   - Vous pourrez observer les metrics `postgresql_*` dans Prometheus (et Grafana), par exemple `postgresql_commits_total` ou `postgresql_rows`
 
+::: tip Question
+
+Dans quels cas le collector est en mode [pull ou push](https://www.alibabacloud.com/blog/pull-or-push-how-to-select-monitoring-systems_599007) ?
+
+:::
+
 ## Références
 
 - https://gitlab.com/blueur/heig-vd-devops/-/tree/feature/instrumentation
@@ -130,3 +136,4 @@ Suivre le scénario suivant : https://opentelemetry.io/docs/demo/scenarios/recom
 - https://www.baeldung.com/spring-boot-opentelemetry-setup
 - https://tillepille.io/posts/otel-fastapi/
 - https://opentelemetry.io/docs/collector/configuration/#exporters
+- https://www.alibabacloud.com/blog/pull-or-push-how-to-select-monitoring-systems_599007
