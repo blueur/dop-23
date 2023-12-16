@@ -23,12 +23,12 @@ title: Home
 | 2023-11-29 |   10    | [Observabilité](./lessons/observability)                         | [Logs](./labs/logs)                              |
 | 2023-12-06 |   11    | [Télémesure](./lessons/telemetry)                                | [Métriques](./labs/metrics)                      |
 | 2023-12-13 |   12    | [DevSecOps](./lessons/devsecops)                                 | [Traces](./labs/traces)                          |
-| 2023-12-20 |   13    | **Test** (45')                                                   | Observabilité (**noté**)                         |
+| 2023-12-20 |   13    | **Test** (45')                                                   | [Observabilité](./labs/observability) (**noté**) |
 | 2023-12-27 |         | _Vacances_                                                       | _Vacances_                                       |
 | 2024-01-03 |         | _Vacances_                                                       | _Vacances_                                       |
-| 2024-01-10 |   14    | **_mercredi 08:30-10:00_**<br>Chaos engineering                  | Observabilité (**noté**)                         |
+| 2024-01-10 |   14    | **_mercredi 08:30-10:00_**<br>Chaos engineering                  | [Observabilité](./labs/observability) (**noté**) |
 | 2024-01-17 |   15    | SRE                                                              | [Release](./labs/release)                        |
-| 2024-01-24 |   16    | **Test** (45')                                                   | Résumé                                           |
+| 2024-01-24 |   16    | **Présentations oraux**                                          | Résumé                                           |
 
 ## Outils
 
