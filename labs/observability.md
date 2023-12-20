@@ -56,6 +56,7 @@ Instrumenter l'application en justifiant vos choix d'outils
   - **Jaeger** pour visualiser les traces sur http://localhost:16686
 - Documenter les configurations manuelles à faire après avoir lancé `docker compose up` dans le `README.md`
   - Exemple: ajouter des dashboards dans Kibana et Grafana
+  - Vous pouvez ajouter des screenshots dans la documentation
 
 #### Logs avec Kibana
 
@@ -72,8 +73,8 @@ Visualiser les métriques de tous les containers (application + outils APM) dans
 Bonus :
 
 - Ajouter des métriques personnalisées de l'application
-  - [Gauge](https://opentelemetry.io/docs/specs/otel/metrics/data-model/#gauge) : Nombre d'entrées dans la map
-  - [Sums](https://opentelemetry.io/docs/specs/otel/metrics/data-model/#sums) : Nombre de changements de la map
+  - Nombre d'entrées dans la map sous forme de [Gauge](https://opentelemetry.io/docs/specs/otel/metrics/data-model/#gauge)
+  - Nombre de changements de la map sous forme de [Sums](https://opentelemetry.io/docs/specs/otel/metrics/data-model/#sums)
 
 #### Traces avec Jaeger
 
@@ -104,7 +105,9 @@ Pour atteindre le 4 :
 Pour atteindre le 6 :
 
 - Application des bonnes pratiques
+- Les points bonus mentionnés ci-dessus sont implémentés
 - Création de dashboards intéressants dans Kibana et Grafana
 - Ajout de métriques personnalisées
 - Bonne documentation sur l'utilisation des outils APM
+- Utiliser les [profiles](https://docs.docker.com/compose/profiles/) pour activer/désactiver les outils APM
 - Toute amélioration est la bienvenue
