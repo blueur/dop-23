@@ -8,27 +8,27 @@ title: Home
 
 ## Calendrier
 
-| Date       | Semaine | Cours (13:15 - 14:45)                                            | Laboratoires (14:55 - 16:30)                     |
-| ---------- | :-----: | ---------------------------------------------------------------- | ------------------------------------------------ |
-| 2023-09-20 |   01    | [Introduction](./lessons/introduction)<br>[Code](./lessons/code) | [Outils](./labs/tools)                           |
-| 2023-09-27 |   02    | [Artefact](./lessons/artefact)<br>[Développement](./lessons/dev) | [Docker](./labs/docker) (**noté**)               |
-| 2023-10-04 |   03    | [Test automatisé](./lessons/test)                                | [Compose](./labs/compose)                        |
-| 2023-10-11 |   04    | [CI/CD](./lessons/cicd)                                          | [CI/CD](./labs/cicd)                             |
-| 2023-10-18 |   05    | **Test** (45')                                                   | [CI/CD](./labs/cicd)                             |
-| 2023-10-25 |         | _Activités interdisciplinaires_                                  | _Activités interdisciplinaires_                  |
-| 2023-11-01 |   06    | [Orchestration](./lessons/orchestration)                         | [Kubernetes](./labs/kubernetes)                  |
-| 2023-11-08 |   07    | [Déploiement](./lessons/deploy)                                  | [CI/CD Java](./labs/cicd-java) (**noté**)        |
-| 2023-11-15 |   08    | [Terraform](./lessons/terraform)                                 | [Kubernetes & Helm](./labs/kubernetes-helm)      |
-| 2023-11-22 |   09    | [GitOps](./lessons/gitops)                                       | [CI/CD Java](./labs/cicd-java) (**remédiation**) |
-| 2023-11-29 |   10    | [Observabilité](./lessons/observability)                         | [Logs](./labs/logs)                              |
-| 2023-12-06 |   11    | [Télémesure](./lessons/telemetry)                                | [Métriques](./labs/metrics)                      |
-| 2023-12-13 |   12    | [DevSecOps](./lessons/devsecops)                                 | [Traces](./labs/traces)                          |
-| 2023-12-20 |   13    | **Test** (45')                                                   | [Observabilité](./labs/observability) (**noté**) |
-| 2023-12-27 |         | _Vacances_                                                       | _Vacances_                                       |
-| 2024-01-03 |         | _Vacances_                                                       | _Vacances_                                       |
-| 2024-01-10 |   14    | **_mercredi 08:30-10:00_**<br>Chaos engineering                  | [Observabilité](./labs/observability) (**noté**) |
-| 2024-01-17 |   15    | SRE                                                              | [Release](./labs/release)                        |
-| 2024-01-24 |   16    | **Présentations oraux**                                          | Résumé                                           |
+| Date       | Semaine | Cours (13:15 - 14:45)                                                | Laboratoires (14:55 - 16:30)                     |
+| ---------- | :-----: | -------------------------------------------------------------------- | ------------------------------------------------ |
+| 2023-09-20 |   01    | [Introduction](./lessons/introduction)<br>[Code](./lessons/code)     | [Outils](./labs/tools)                           |
+| 2023-09-27 |   02    | [Artefact](./lessons/artefact)<br>[Développement](./lessons/dev)     | [Docker](./labs/docker) (**noté**)               |
+| 2023-10-04 |   03    | [Test automatisé](./lessons/test)                                    | [Compose](./labs/compose)                        |
+| 2023-10-11 |   04    | [CI/CD](./lessons/cicd)                                              | [CI/CD](./labs/cicd)                             |
+| 2023-10-18 |   05    | **Test** (45')                                                       | [CI/CD](./labs/cicd)                             |
+| 2023-10-25 |         | _Activités interdisciplinaires_                                      | _Activités interdisciplinaires_                  |
+| 2023-11-01 |   06    | [Orchestration](./lessons/orchestration)                             | [Kubernetes](./labs/kubernetes)                  |
+| 2023-11-08 |   07    | [Déploiement](./lessons/deploy)                                      | [CI/CD Java](./labs/cicd-java) (**noté**)        |
+| 2023-11-15 |   08    | [Terraform](./lessons/terraform)                                     | [Kubernetes & Helm](./labs/kubernetes-helm)      |
+| 2023-11-22 |   09    | [GitOps](./lessons/gitops)                                           | [CI/CD Java](./labs/cicd-java) (**remédiation**) |
+| 2023-11-29 |   10    | [Observabilité](./lessons/observability)                             | [Logs](./labs/logs)                              |
+| 2023-12-06 |   11    | [Télémesure](./lessons/telemetry)                                    | [Métriques](./labs/metrics)                      |
+| 2023-12-13 |   12    | [DevSecOps](./lessons/devsecops)                                     | [Traces](./labs/traces)                          |
+| 2023-12-20 |   13    | **Test** (45')                                                       | [Observabilité](./labs/observability) (**noté**) |
+| 2023-12-27 |         | _Vacances_                                                           | _Vacances_                                       |
+| 2024-01-03 |         | _Vacances_                                                           | _Vacances_                                       |
+| 2024-01-10 |   14    | **_mercredi 08:30-10:00_**<br>[Ingénierie du chaos](./lessons/chaos) | [Observabilité](./labs/observability) (**noté**) |
+| 2024-01-17 |   15    | [Ingénierie de la fiabilité des sites](./lessons/sre)                | [Release](./labs/release)                        |
+| 2024-01-24 |   16    | [Présentations oraux](./lessons/presentation) (**noté**)             | Résumé                                           |
 
 ## Outils
 
@@ -39,10 +39,6 @@ title: Home
 - [Cyberlearn](https://cyberlearn.hes-so.ch/course/view.php?id=9480)
 - [Fiche d'unité](https://gaps.heig-vd.ch/public/fiches/uv/uv.php?id=6730)
 - [Calendrier académique](https://heig-vd.ch/formation/bachelor/calendrier-academique/)
-
-## Ressources additionnelles
-
-- [Google Site Reliability Engineering](https://sre.google/)
 
 <script setup>
 import { onMounted, nextTick } from 'vue'

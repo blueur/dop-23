@@ -57,7 +57,12 @@ export default defineConfig({
           { text: "Observabilité", link: "/lessons/observability" },
           { text: "Télémesure", link: "/lessons/telemetry" },
           { text: "DevSecOps", link: "/lessons/devsecops" },
-          { text: "Chaos engineering" },
+          { text: "Ingénierie du chaos", link: "/lessons/chaos" },
+          {
+            text: "Ingénierie de la fiabilité des sites",
+            link: "/lessons/sre",
+          },
+          { text: "Présentation", link: "/lessons/presentation" },
         ],
       },
       {
