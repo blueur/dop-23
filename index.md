@@ -28,7 +28,7 @@ title: Home
 | 2024-01-03 |         | _Vacances_                                                           | _Vacances_                                       |
 | 2024-01-10 |   14    | **_mercredi 08:30-10:00_**<br>[Ingénierie du chaos](./lessons/chaos) | [Observabilité](./labs/observability) (**noté**) |
 | 2024-01-17 |   15    | [Ingénierie de la fiabilité des sites](./lessons/sre)                | [Release](./labs/release)                        |
-| 2024-01-24 |   16    | [Présentations oraux](./lessons/presentation) (**noté**)             | Résumé                                           |
+| 2024-01-24 |   16    | [Présentation](./lessons/presentation) (**noté**)                    | Résumé                                           |
 
 ## Outils
 

@@ -21,7 +21,7 @@ https://principlesofchaos.org/fr/
 
 ---
 
-### Erreurs (fallacies) des systèmes distribués
+### Préjugés (fallacies) des systèmes distribués
 
 - &shy;<!-- .element: class="fragment" --> Le réseau est **fiable**
 - &shy;<!-- .element: class="fragment" --> Le temps de **latence** est nul
